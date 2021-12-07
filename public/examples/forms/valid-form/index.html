@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Проверка заполненности формы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#nowhere" autofocus>
+    <p>
+      <label>
+        Ваше имя или ник:
+        <input type="text" required placeholder="например, SelenIT">
+      </label>
+    </p>
+    <p>
+      <label>
+        Ваш сайт:
+        <input type="url" required placeholder="например, http://css-live.ru/" value="http://">
+      </label>
+    </p>
+    <p>
+      <label>
+        Ваш e-mail:
+        <input type="email" required placeholder="например, selenit@mail.by">
+      </label>
+    </p>
+    <p class="next"><button>продолжить &gt;&gt;</button></p>
+  </form>
+</body>
+</html>

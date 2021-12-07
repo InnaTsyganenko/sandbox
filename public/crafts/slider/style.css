@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(253, 246, 241);
+  font-family: "Segoe UI", "Arial", sans-serif;
+  font-size: 18px;
+}
+
+.conspect {
+  min-width: 30%;
+  width: fit-content;
+  max-width: 1000px;
+  background:rgba(252, 252, 252, 0.726);
+  padding: 50px;
+  margin: 5%;
+}

@@ -1,0 +1,42 @@
+﻿html {
+  height: 100%;
+}
+
+body {
+  background: #f0f0f0;
+  height: 100%;
+}
+
+.map {
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
+  background-image: radial-gradient(circle farthest-corner at center, #ace219 0%, #77b309 100%);
+}
+
+.marker {
+  display: flex;
+  margin: auto;
+  top: 200px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #ff0000;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 0;
+  transform: rotate(45deg);
+  box-shadow: -15px 5px 5px 0px rgb(114, 114, 114);
+}
+
+.marker::before {
+  position: absolute;
+  content: '';
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+}

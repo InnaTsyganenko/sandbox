@@ -1,0 +1,53 @@
+html {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #222;
+  height: 100%;
+}
+
+.wrap {
+  margin: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+* {
+  margin: 0;
+  color: inherit; 
+}
+
+* + *:not(li):not(body) {
+  margin-top: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+  
+.box {
+  padding: 1.5rem;
+  border: 2px solid;
+  background-color: #ccc;
+}
+
+.button {
+  background: #000;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+.button [type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.button [type="checkbox"] + span::before {
+  content: 'off';
+}
+
+.button [type="checkbox"]:checked + span::before {
+  content: 'on';
+}

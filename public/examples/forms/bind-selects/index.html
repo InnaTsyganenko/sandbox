@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Связанные селекты</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form name="form1" method="" action="">
+    <label>Bind selects:</label>
+    <select class="bind-select" NAME="state1" onchange="dataCopy(1)">
+      <option value="One">One</option>
+      <option value="Two">Two</option>
+      <option value="Three">Three</option>
+      <option value="Four">Four</option>
+    </select>
+    <select class="bind-select" NAME="state2" onchange="dataCopy(2)">
+      <option value="One">One</option>
+      <option value="Two">Two</option>
+      <option value="Three">Three</option>
+      <option value="Four">Four</option>
+    </select>
+
+    <label>Native select</label>
+    <select>
+      <option>Apples</option>
+      <option>Bananas</option>
+      <option>Grapes</option>
+      <option>Oranges</option>
+      <option selected="">A very long option name to test wrapping</option>
+    </select>
+
+
+    <label>Same select w/ CSS applied</label>
+    <select class="select-css">
+      <option>Apples</option>
+      <option>Bananas</option>
+      <option>Grapes</option>
+      <option>Oranges</option>
+      <option selected="">A very long option name to test wrapping</option>
+    </select>
+
+
+    <div style="width:50%; min-width:10em;">
+    <label>Same, in a 50% wide container</label>
+    <select class="select-css">
+      <option>Apples</option>
+      <option>Bananas</option>
+      <option>Grapes</option>
+      <option>Oranges</option>
+      <option selected="">A very long option name to test wrapping</option>
+    </select>
+    </div>
+
+    <label style="display: inline-block;">Same, styled inline block: </label>
+    <select class="select-css" style="display: inline-block; width: auto;">
+      <option>Apples</option>
+      <option>Bananas</option>
+      <option>Grapes</option>
+      <option>Oranges</option>
+      <option selected="">A very long option name to test wrapping</option>
+    </select>
+
+    <label>Text input:
+      <input type="text" placeholder="I'm a placeholder">
+    </label>
+
+
+    <div class="dark-wrapper">
+      <label>Same select inside a dark wrapper</label>
+      <select class="select-css">
+        <option>Apples</option>
+        <option>Bananas</option>
+        <option>Grapes</option>
+        <option>Oranges</option>
+        <option selected="">A very long option name to test wrapping</option>
+      </select>
+    </div>
+
+    <p style="font-size: 0.8rem;">
+      Note: in Firefox, using gradients on the <code>&lt;select&gt;</code> background
+      without a solid fallback color can make the option list unreadable.
+    </p>
+  </form>
+
+  <h2>Notes on the CSS</h2>
+  <p>The select is set to display: block by default but you can style it display: inline-block; width: auto; if you’d like it to sit alongside a label.</p>
+  <p>The background of the select is created using two background images: the first is an svg arrow icon (expressed inline as a data URI) and the second is a repeating linear gradient. Either URL could be an external image if you’d like. If you change the icon image, be aware that its size is set in the first section of the later background-size: .65em auto, 100%; property. And its position is set via background-position: right .7em top 50%, 0 0; (which is .7em from the right side, respectively). Also, if the size changes, you might want to make more right padding on the button so that it doesn’t overlap the select's text, but be aware that in IE9 and older, the custom arrow will not appear, and the browser’s default arrow will show to the left of the padding, so don’t add too much there or IE9’s arrow will be inset really far.</p>
+  <p>The linear gradient background is important to keep, because its presence actually prevents IE9 and older from recognizing the background property, and as a result it won’t show the custom icon alongside its unhideable native one. If you want a flat color, use a linear gradient between two of the same color values.</p>
+  <p>The appearance rule and its and prefixed versions are important to unset some default browser select styling</p>
+  <p>The font-size: 16px; rule is important because iOS Safari will zoom-in the site layout if the select's text is less than 16px. Generally, this behavior is annoying so we try to avoid it with a 16px font size on selects.</p>
+  <p>The .select-css option keeps option elements from inheriting the bold font weight of the select button itself.</p>
+  <p>As noted in Scott O’Hara’s article, setting background color on the select (though not background image as I’ve used here, can cause option elements to inherit background colors as well, which can cause problems. So avoid doing that. )</p>
+  <p>The .select-css::-ms-expand rule instructs IE11 and IE10 to hide the menu icon pseudo element, so the custom icon behind it can appear. Thanks for the tip, Jelmer de Maat.</p>
+  <script>
+    function dataCopy(n) {
+      document.querySelectorAll('[NAME^="state"]')
+        .forEach((el) => el.value = document.form1[`state${n}`].value)
+    };
+  </script>
+</body>
+</html>

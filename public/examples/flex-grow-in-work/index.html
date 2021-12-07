@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Flex-grow in work</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body class="pattern">
+    <section class="gallery">
+      <h1>Flex-grow in work</h1>
+      <p>Задача построить сетку для раздела с галереей фотографий. Исходные файлы фотографий имеют два типа размеров: 570x320 и 285x320. По макету необходимо, чтобы между фотографиями не было отступов, а также чтобы они занимали всю ширину контейнера. Контейнер имеет фиксированную ширину 1200px.</p>
+      <img src="exmpl1.jpg" alt="">
+      <p>Как видите, справа у контейнера с фотографиями осталось свободное место.</p>
+      <p>Попробуем заполнить свободное пространство используя flex-grow: 1. Добавим это свойство для флекс-элементов:</p>
+      <pre>.gallery-item {
+  display: flex;
+  flex-grow: 1;
+}
+      </pre>
+      <img src="exmpl2.jpg" alt="">
+      <p>Чтобы изображения увеличивалось только по ширине и при этом сохраняло свои пропорции при заполнении блока можно использовать следующие стили:</p>
+      <pre>.gallery-item-img {
+  width: 100%;
+  object-fit: cover;
+}
+      </pre>
+      <img src="exmpl2.jpg" alt="">
+      <p>Блоки растянулись на всю ширину контейнера. Но вы, наверное, обратили внимание, что сетка немного сломалась. Нет чётких колонок, как в исходном состоянии. Это произошло из-за того, что изначальные размеры элементов отличаются. В нашем случае ширина первого типа элементов в два раза больше, чем ширина второго типа элементов. Поэтому лучше свободное пространство поделить в этих же пропорциях. То есть для элементов меньшего размера задать flex-grow: 1, а для большего — flex-grow: 2.</p>
+      <pre>/* стили для элементов меньшего размера */
+.gallery-item {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* стили для элементов большего размера */
+.gallery-item-big {
+  flex-grow: 2;
+}
+      </pre>
+      <p></p>
+      <div class="container">
+        <ul class="gallery-list">
+          <li class="gallery-item gallery-item-big">
+            <img class="gallery-item-img" src="1.jpg" width="570" height="320" alt="Фото">
+          </li>
+          <li class="gallery-item">
+            <img class="gallery-item-img" src="2.jpg" width="285" height="320" alt="Фото">
+          </li>
+          <li class="gallery-item">
+            <img class="gallery-item-img" src="3.jpg" width="285" height="320" alt="Фото">
+          </li>
+          <li class="gallery-item">
+             <img class="gallery-item-img" src="4.jpg" width="285" height="320" alt="Фото">
+           </li>
+           <li class="gallery-item">
+             <img class="gallery-item-img" src="5.jpg" width="285" height="320" alt="Фото">
+           </li>
+           <li class="gallery-item gallery-item-big">
+             <img class="gallery-item-img" src="6.jpg" width="570" height="320" alt="Фото">
+           </li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

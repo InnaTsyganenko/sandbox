@@ -1,0 +1,38 @@
+form {
+  width: 500px;
+  padding: 1em;
+  border: 2px solid #ccc;
+  display: flex;
+  flex-flow: column;
+}
+label {
+  display: flex;
+}
+input {
+  width: 67%;
+  order: 2;
+}
+label::after {
+  content: '*';
+  color: #f80;
+  margin-right: auto;
+  display: inline-block; /* от флексбага № 12 (http://css-live.ru/articles/brauzernye-bagi-flexbox.html#12-inline-elements-are-not-treated-as-flex-items) */
+}
+.next {
+  text-align: center;
+  display: none;
+  order: 2;
+}
+input:invalid {
+  outline: none;
+  box-shadow: none;
+}
+form:valid {
+  border-color: green;
+}
+:valid .next {
+  display: block;
+}
+form:valid::after {
+  content: 'Отлично! Всё заполнено как надо, можно двигаться дальше';
+}
