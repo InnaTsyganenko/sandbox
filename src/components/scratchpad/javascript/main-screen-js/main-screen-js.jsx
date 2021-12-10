@@ -31,7 +31,7 @@ import Scrolling from '../scrolling/scrolling';
 import DragAndDrop from '../drag-and-drop/drag-and-drop';
 import DatesandTimes from '../dates-and-times/dates-and-times';
 import WorkWithVideo from '../work-with-video/work-with-video';
-import AboutProgramming from '../about-programming/about-programming';
+import AboutProgramming from '../oop/oop';
 
 function MainAboutCSS() {
   const meta = {
