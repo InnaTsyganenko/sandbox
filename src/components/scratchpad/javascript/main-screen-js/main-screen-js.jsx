@@ -63,14 +63,6 @@ function MainAboutCSS() {
           <ul>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['about-programming']: true}})}
-              >ООП и Javascript
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#"
                 onClick={() => setState({activeItem: {['basic-js']: true}})}
               >Основы JS
               </Link>
@@ -127,26 +119,6 @@ function MainAboutCSS() {
                   <Link to="#"
                     onClick={() => setState({activeItem: {['areas-of-visibility']: true}})}
                   >Areas Of Visibility
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['data-structures']: true}})}
-              >Data Structures
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['objects']: true}})}
-                  >Objects
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['arrays']: true}})}
-                  >Arrays
                   </Link>
                 </li>
               </ul>
@@ -241,6 +213,32 @@ function MainAboutCSS() {
           <ul>
             <li>
               <Link to="#"
+                onClick={() => setState({activeItem: {['data-structures']: true}})}
+              >Data Structures
+              </Link>
+              <ul>
+                <li>
+                  <Link to="#"
+                    onClick={() => setState({activeItem: {['objects']: true}})}
+                  >Objects
+                  </Link>
+                </li>
+                <li>
+                  <Link to="#"
+                    onClick={() => setState({activeItem: {['arrays']: true}})}
+                  >Arrays
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['oop']: true}})}
+              >ООП и Javascript
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
                 onClick={() => setState({activeItem: {['spa-and-mvp']: true}})}
               ><abbr data-title="Single-Page Application">SPA</abbr> and <abbr data-title="Model View Presenter">MVP</abbr>
               </Link>
@@ -286,7 +284,7 @@ function MainAboutCSS() {
           {(state.activeItem['drag-and-drop']) && <DragAndDrop />}
           {(state.activeItem['dates']) && <DatesandTimes />}
           {(state.activeItem['work-with-video']) && <WorkWithVideo />}
-          {(state.activeItem['about-programming']) && <AboutProgramming />}
+          {(state.activeItem['oop']) && <AboutProgramming />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
