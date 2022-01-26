@@ -44,7 +44,10 @@ cite {
 .main-nav__logo {
   position: absolute;
   top: 42px;
-  margin: 0 auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   z-index: 20;
 }
 
