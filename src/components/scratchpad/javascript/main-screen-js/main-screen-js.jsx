@@ -32,6 +32,7 @@ import DragAndDrop from '../drag-and-drop/drag-and-drop';
 import DatesandTimes from '../dates-and-times/dates-and-times';
 import WorkWithVideo from '../work-with-video/work-with-video';
 import AboutProgramming from '../oop/oop';
+import ArchitectureOfFrontEndApplications from '../architecture-of-front-end-applications/architecture-of-front-end-applications';
 
 function MainAboutCSS() {
   const meta = {
@@ -249,6 +250,12 @@ function MainAboutCSS() {
               >Ajax &amp; SPA
               </Link>
             </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['architecture-of-front-end-applications']: true}})}
+              >Architecture of front end applications
+              </Link>
+            </li>
           </ul>
           <Link to="#"
             onClick={() => setState({activeItem: {['cases']: true}})}
@@ -285,6 +292,7 @@ function MainAboutCSS() {
           {(state.activeItem['dates']) && <DatesandTimes />}
           {(state.activeItem['work-with-video']) && <WorkWithVideo />}
           {(state.activeItem['oop']) && <AboutProgramming />}
+          {(state.activeItem['architecture-of-front-end-applications']) && <ArchitectureOfFrontEndApplications />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>

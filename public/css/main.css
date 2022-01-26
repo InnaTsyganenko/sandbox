@@ -20,6 +20,7 @@ body {
   margin: 0 auto;
   min-height: 100%;
   font-family: Calibri, "Arial", sans-serif;
+  font-family: system-ui;
   font-size: 18px;
   color: rgb(49, 38, 38);
   margin: auto;
