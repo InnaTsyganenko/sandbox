@@ -33,6 +33,12 @@ import DatesandTimes from '../dates-and-times/dates-and-times';
 import WorkWithVideo from '../work-with-video/work-with-video';
 import AboutProgramming from '../oop/oop';
 import ArchitectureOfFrontEndApplications from '../architecture-of-front-end-applications/architecture-of-front-end-applications';
+import DemoToMVP from '../demo-to-mvp/demo-to-mvp';
+import DemoEnumeratingObjectKeys from '../demo-enumerating-object-keys/demo-enumerating-object-keys';
+import DemoWhatsNewInEs2015Objects from '../demo-whats-new-in-es2015-objects/demo-whats-new-in-es2015-objects';
+import DemoDataBinding from '../demo-data-binding/demo-data-binding';
+import DemoPatternObserver from '../demo-pattern-observer/demo-pattern-observer';
+// import DemoToMVP from '../demo-to-mvp/demo-to-mvp';
 
 function MainAboutCSS() {
   const meta = {
@@ -257,6 +263,40 @@ function MainAboutCSS() {
               </Link>
             </li>
           </ul>
+
+          <h2>Demo</h2>
+          <ul>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['demo-to-mvp']: true}})}
+              >Demo to MVP
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['demo-enumerating-object-keys']: true}})}
+              >Demo enumerating object keys
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['demo-whats-new-in-es2015-objects']: true}})}
+              >Demo Whats New In Es2015 Objects
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['demo-data-binding']: true}})}
+              >Demo Data Binding
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['demo-pattern-observer']: true}})}
+              >Demo Pattern Observer
+              </Link>
+            </li>
+          </ul>
           <Link to="#"
             onClick={() => setState({activeItem: {['cases']: true}})}
           >Cases
@@ -293,6 +333,12 @@ function MainAboutCSS() {
           {(state.activeItem['work-with-video']) && <WorkWithVideo />}
           {(state.activeItem['oop']) && <AboutProgramming />}
           {(state.activeItem['architecture-of-front-end-applications']) && <ArchitectureOfFrontEndApplications />}
+          {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
+          {(state.activeItem['demo-enumerating-object-keys']) && <DemoEnumeratingObjectKeys />}
+          {(state.activeItem['demo-whats-new-in-es2015-objects']) && <DemoWhatsNewInEs2015Objects />}
+          {(state.activeItem['demo-data-binding']) && <DemoDataBinding />}
+          {(state.activeItem['demo-pattern-observer']) && <DemoPatternObserver />}
+          {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
