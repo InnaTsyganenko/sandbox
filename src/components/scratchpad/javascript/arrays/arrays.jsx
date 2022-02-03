@@ -6,6 +6,7 @@ function Arrays() {
     <section className="conspect">
       <h1>Массивы</h1>
       <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">MDN. Array</a></p>
+      <p><a href="https://habr.com/ru/company/ruvds/blog/413169/" target="_blank" rel="noopener noreferrer">Полезные методы массивов и объектов в JavaScript</a></p>
       <div className="note">Объекты и массивы лучше объявлять через <abbr data-title="Литерал (англ. literal) — запись в исходном коде компьютерной программы, представляющая собой фиксированное значение(константа). Литералами также называют представление значения некоторого типа данных">литералы</abbr>.</div>
       <div className="warn">Разница между объектом и массивом в упорядоченности ключей и в форме записи. В объекте не гарантируется такая же последовательность ключей, как она была задана, а в массиве будет такая же последовательность как и указали в начале.</div>
       <p>Массив — список элементов. У каждого из них есть порядковый номер. Массивы и чтение из них выглядят так:</p>
@@ -16,6 +17,50 @@ var array = [10, 20, 30, 40, 50];
 console.log(array[0]); // Выведет: 10
 console.log(array[3]); // Выведет: 40`}
       </pre>
+
+      <h2>Как скопировать исходный массив</h2>
+      <p>Тат как массивы передаются по ссылке, то просто сохранить в переменную не получится.</p>
+      <ol>
+        <li>метод slice
+          <pre>{`this.#points = points;
+    this.#sourcedPoints = points.slice();
+
+    #sortPoints = (sortType) => {
+      switch (sortType) {
+        case SortType.TIME:
+          this.#points.sort((a, b) => b.duration - a.duration);
+          break;
+        case SortType.PRICE:
+          this.#points.sort((a, b) => b.price - a.price);
+          break;
+        default:
+          this.#points = [...this.#sourcedPoints]; // вернётся исходный массив
+      }
+
+      this.#currentSortType = sortType;
+    }`}
+          </pre>
+        </li>
+        <li>Оператор spread
+          <pre>{`this.#points = points;
+    this.#sourcedPoints = [...points];
+
+    #sortPoints = (sortType) => {
+      switch (sortType) {
+        case SortType.TIME:
+          this.#points.sort((a, b) => b.duration - a.duration);
+          break;
+        case SortType.PRICE:
+          this.#points.sort((a, b) => b.price - a.price);
+          break;
+        default:
+          this.#points = [...this.#sourcedPoints]; // вернётся исходный массив
+      }
+
+      this.#currentSortType = sortType;`}
+          </pre>
+        </li>
+      </ol>
 
       <h3>Массивы в ES2015</h3>
       <p>В ES2015 появились новые способы объявления массивов. Если раньше мы могли создавать массив или через конструктор Array, или через литерал массива [ ] (квадратные скобки), то теперь у нас появились ещё три метода: Array.from, Array.of и операторы spread и rest.</p>
