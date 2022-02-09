@@ -27,6 +27,20 @@ function DatesandTimes() {
   const formatShortMonth = (date) => new Intl.DateTimeFormat('en-US', options).format(date); //  FEB`}
       </pre>
       <a href="https://dev-gang.ru/article/kak-konvertirovat-sekundy-v-minuty-i-czasy-s-pomosczu-vanilla-js-hut21w8ww2/" target="_blank" rel="noopener noreferrer">Как конвертировать секунды в минуты и часы с помощью vanilla JS </a>
+
+      <p>Пример фильтрации точек по датам:</p>
+      <pre>{`import {FilterType} from '../const';
+
+const isSameOrAfterDate = (date) => date >= new Date();
+const isPastDate = (date) => date < new Date();
+const isCurrentDate = (dateFrom, dateTo) => dateFrom < new Date() && dateTo > new Date();
+
+export const filter = {
+  [FilterType.EVERYTHING]: (points) => points,
+  [FilterType.FUTURE]: (points) => points.filter((point) => isSameOrAfterDate(point.dateFrom) || isCurrentDate(point.dateFrom, point.dateTo)),
+  [FilterType.PAST]: (points) => points.filter((point) => isPastDate(point.dateTo) || isCurrentDate(point.dateFrom, point.dateTo)),
+};`}
+      </pre>
     </section>
   );
 }
