@@ -38,7 +38,7 @@ import DemoEnumeratingObjectKeys from '../demo-enumerating-object-keys/demo-enum
 import DemoWhatsNewInEs2015Objects from '../demo-whats-new-in-es2015-objects/demo-whats-new-in-es2015-objects';
 import DemoDataBinding from '../demo-data-binding/demo-data-binding';
 import DemoPatternObserver from '../demo-pattern-observer/demo-pattern-observer';
-// import DemoToMVP from '../demo-to-mvp/demo-to-mvp';
+import Mock from '../mock/mock';
 
 function MainAboutCSS() {
   const meta = {
@@ -262,6 +262,12 @@ function MainAboutCSS() {
               >Architecture of front end applications
               </Link>
             </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['mock']: true}})}
+              >Mock
+              </Link>
+            </li>
           </ul>
 
           <h2>Demo</h2>
@@ -339,6 +345,7 @@ function MainAboutCSS() {
           {(state.activeItem['demo-data-binding']) && <DemoDataBinding />}
           {(state.activeItem['demo-pattern-observer']) && <DemoPatternObserver />}
           {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
+          {(state.activeItem['mock']) && <Mock />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
