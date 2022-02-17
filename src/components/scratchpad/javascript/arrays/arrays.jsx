@@ -74,7 +74,7 @@ console.log(array[3]); // Выведет: 40`}
 
       <h3>Array.from</h3>
       <p>Array.from используется для создания массивов на основании других перечисляемых объектов. Например, если у вас есть результат работы функции querySelectorAll (HTMLElementsList), вы можете превратить её в обычный массив одной короткой строкой.</p>
-      <pre>{'const allDivs = Array.from(document.querySelectorAll('div'));'}
+      <pre>{'const allDivs = Array.from(document.querySelectorAll(div));'}
       </pre>
 
       <h3>Array.of</h3>
