@@ -1,0 +1,16 @@
+body {
+  display: flex;
+}
+
+p {
+  margin: 0.5em 0 2em;
+}
+
+img {
+  border: 1px solid white;
+  border-radius: 5%;
+}
+
+form {
+  margin-top: 50px;
+}
