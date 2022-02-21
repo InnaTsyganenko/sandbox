@@ -219,6 +219,18 @@ addThumbnailClickHandler(thumbnails[i], photos[i]);
 }`}
       </pre>
 
+      <h3>Синтаксис оставшихся параметров функции <span className="hl-10">rest</span></h3>
+      <p>При работе с функциями можно использовать синтаксис оставшихся параметров для того, чтобы организовать приём любого количества аргументов в виде массива.</p>
+      <p>Выведем массив, содержащий аргументы, переданные функции.</p>
+      <pre>{`function displayArgumentsArray(...theArguments) {
+  console.log(theArguments);
+}
+
+displayArgumentsArray('hi', 'there', 'bud');
+// В консоли будет выведен массив ['hi', 'there', 'bud']`}
+      </pre>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">MDN. Rest parameters</a></p>
+
       <p><a href="examples/function-create-card-of-store/index.html">Функция, создающая карточки товаров для интернет-магазина</a></p>
       <p><a href="examples/function-create-card-of-store-ice/index.html">Функция, создающая карточки товаров для интернет-магазина мороженного</a></p>
       <p><a href="examples/photo-gallery/index.html">Пример использования замыкания в функции - реализация фотогалереи</a></p>
