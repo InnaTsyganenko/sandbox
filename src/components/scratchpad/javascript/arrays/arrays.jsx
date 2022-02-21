@@ -248,6 +248,30 @@ console.log(reverseNumbers); // [4, 3, 2, 1, 0]`}
       </pre>
       <p>Метод вернёт новый массив, который будет состоять из элементов, расположенных в обратном порядке.</p>
 
+      <h3>Проверка на содержание значения <span className="hl-1">includes</span></h3>
+      <h4>includes - для примитивных значений (строка, число, логическое значение, символ и специальное значение undefined).</h4>
+      <p>Он похож на метод .some(), но он проверяет не соответствие элементов массива некоему условию, а наличие в массиве заданного при его вызове значения.</p>
+      <p>Этот метод возвращает значение true, если массив содержит определенный элемент, и значение false — если нет.</p>
+      <p>array.includes(value, fromIndex) также принимает необязательный второй аргумент, чтобы начать поиск значения, начиная с индекса.</p>
+      <pre>{`const myAwesomeArray = [1, 2, 3, 4, 5]
+myAwesomeArray.includes(3) // => true
+myAwesomeArray.includes(8) //=> false
+
+const greetings = ['hi', 'hello'];
+greetings.includes('hi');  // => true
+greetings.includes('hey'); // => false
+
+const letters = ['a', 'b', 'c', 'd'];
+letters.includes('c', 1); // => true
+letters.includes('a', 1); // => false`}
+      </pre>
+      <p>Также includes методом можно определить содержит ли массив ссылку на объект:</p>
+      <pre>{`const greetings = [{ message: 'hi' }, { message: 'hello' }];
+const toSearch = greetings[0];
+greetings.includes(toSearch); // => true`}
+      </pre>
+      <p>Но поиск по содержимому этим способом не выполнить. Искать по содержимому можно с помощью some.</p>
+
       <h3>Проверить значение массива <span className="hl-9">some</span></h3>
       <p>С его помощью можно проверить присутствует ли в массиве элемент, который удовлетворяет определённому условию. Результатом выполнения метода some будет true или false.</p>
       <p>Метод some перебирает элементы массива и для каждого элемента вызывает переданную функцию. Метод some будет вызывать функцию для каждого элемента, пока она не вернёт true. Как только это случится, метод some прервёт работу и вернёт в качестве результата значение true.</p>
@@ -263,6 +287,12 @@ const isExistsOverTwenty = numbers.some((value) => {
   return value > 20; // Проверяем каждый элемент, больше ли он, чем 20
 }); // some пройдёт все элементы, они все меньше 20, поэтому он вернёт false`}
       </pre>
+      <p>Теперь давайте используем неглубокую функцию равенства в сочетании с методом array.some(callback), чтобы определить, содержит ли массив объект по содержимому:</p>
+      <pre>{`const greetings = [{ message: 'hi' }, { message: 'hello' }];
+const toSearch = { message: 'hi' };
+greetings.some(item => shallowEqual(item, toSearch)); // => true`}
+      </pre>
+      <p>Greetings.some(item =&gt; smallEqual(item, toSearch)) проверяет каждый элемент массива на поверхностное равенство с объектом toSearch. Если искомый объект содержит также вложенные объекты, то вместо функции smallEqual() можно использовать функцию deepEqual().</p>
 
       <h3>Проверить элементы массива <span className="hl-10">every</span></h3>
       <p>Если метод some позволяет убедиться, что хотя бы один элемент массива удовлетворяет условию, то при помощи метода every можно проверить, что условию соответствуют все элементы массива. Результатом вызова метода every будет булево значение: true или false.</p>
@@ -274,18 +304,6 @@ const isEveryNumberOverTen = numbers.every((value) => {
 }); // every вернёт true, потому что все элементы массива больше 10`}
       </pre>
       <p>Если вызвать его на пустом массиве, то результатом всегда будет true.</p>
-
-      <h3>Проверка на содержание значения <span className="hl-1">includes</span></h3>
-      <p>Он похож на метод .some(), но он проверяет не соответствие элементов массива некоему условию, а наличие в массиве заданного при его вызове значения.</p>
-      <p>Этот метод возвращает значение true, если массив содержит определенный элемент, и значение false — если нет.</p>
-      <pre>{`const myAwesomeArray = [1, 2, 3, 4, 5]
-
-myAwesomeArray.includes(3)
-//-------> Output : true
-
-myAwesomeArray.includes(8)
-//-------> Output : false`}
-      </pre>
 
       <h3>Поиск элемента <span className="hl-7">find</span></h3>
       <p>Этот метод принимает функцию в качестве аргумента и в дальнейшем применяет ее к массиву. Он возвращает значение элемента, найденного в массиве, если элемент удовлетворяет условию проверяющей функции. В противном случае оно возвращается со значением undefined.</p>
@@ -325,6 +343,7 @@ console.log(terminatorFilm); // { id: 1, title: "Terminator" }`}
 
       <h3>Свернуть массив <span className="hl-4">reduce</span></h3>
       <p><a href="https://habr.com/ru/post/483182/" target="_blank" rel="noopener noreferrer">Пять интересных способов использования Array.reduce() (и один скучный путь)</a></p>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener noreferrer">MDN. Array.prototype.reduce()</a></p>
       <p>Сворачивает массив, то есть из набора значений позволяет получить одно. Это значение может быть произвольного типа. За счёт этой возможности, метод reduce становится мощным инструментом, позволяющим решить множество разных задач.</p>
       <pre>{'array.reduce(callback[, initialValue]);'}</pre>
       <p>Первым параметром метод принимает функцию, а вторым начальное значение аккумулятора (опционально). Аккумулятором называют результирующее значение.</p>
@@ -363,6 +382,81 @@ console.log(sum); // 523`}
 myAwesomeArray.reduce((total, value) => total * value)
 // 1 * 2 * 3 * 4 * 5
 //-------> Output = 120`}
+      </pre>
+
+      <h3>Группировка массивов с <span className="hl-7">array.groupBy() and array.groupByToMap()</span></h3>
+      <h4>array.groupBy()</h4>
+      <p>Возвращает объект, в котором каждое свойство имеет ключ в виде имени категории и значение в виде массива с продуктами из соответствующей категории.</p>
+      <p>array.groupBy(callback) принимает функцию обратного вызова, которая вызывается с тремя аргументами: текущим элементом массива, индексом и самим массивом. Обратный вызов должен возвращать строку: имя группы, в которую вы хотите добавить элемент.</p>
+      <pre>{`const groupedObject = array.groupBy((item, index, array) => {
+  // ...
+  return groupNameAsString;
+});
+
+Есть такое:
+const products = [
+  { name: 'apples', category: 'fruits' },
+  { name: 'oranges', category: 'fruits' },
+  { name: 'potatoes', category: 'vegetables' }
+];
+
+Надо такое:
+const groupByCategory = {
+  'fruits': [
+    { name: 'apples', category: 'fruits' },
+    { name: 'oranges', category: 'fruits' },
+  ],
+  'vegetables': [
+    { name: 'potatoes', category: 'vegetables' }
+  ]
+};
+
+Можно reduce:
+const groupByCategory = products.reduce((group, product) => {
+  const { category } = product;
+  group[category] = group[category] ?? [];
+  group[category].push(product);
+  return group;
+}, {});
+
+А можно groupBy:
+const groupByCategory = products.groupBy(product => {
+  return product.category;
+});
+
+Метод groupBy содержит меньше кода и более удобочитаем.
+`}
+      </pre>
+      <h4>array.groupByToMap()</h4>
+      <p>Иногда вы можете захотеть использовать карту (Map) вместо простого объекта. Преимущество Map в том, что он принимает любой тип данных в качестве ключа, а простой объект ограничен только строками и символами.</p>
+      <pre>{`const groupByCategory = products.groupByToMap(product => {
+  return product.category;
+});
+console.log(groupByCategory);
+// Map([
+//   ['fruits', [
+//     { name: 'apples', category: 'fruits' },
+//     { name: 'oranges', category: 'fruits' },
+//   ]],
+//   ['vegetables', [
+//     { name: 'potatoes', category: 'vegetables' }
+//   ]
+// ])`}
+      </pre>
+      <p>Если вы хотите использовать обе функции сразу, используйте полифилл, предоставляемый библиотекой core-js.</p>
+
+      <h3>Доступ к элементам по индексу <span className="hl-7">array.at(index)</span></h3>
+      <p>Основным преимуществом нового метода является доступ к элементам с конца массива с использованием отрицательного индекса, что невозможно при использовании обычного синтаксиса квадратных скобок array[index].</p>
+      <p>Если аргумент индекса является положительным целым числом &gt;= 0, метод возвращает элемент с этим индексом. Если аргумент индекса больше или равен длине массива, то, как и обычный метод доступа, метод возвращает значение undefined. Настоящая магия происходит, когда вы используете отрицательный индекс с методом array.at() — тогда доступ к элементу осуществляется с конца массива:</p>
+      <pre>{`const fruits = ['orange', 'apple', 'banana', 'grape'];
+const item = fruits.at(1);
+item; // => 'apple'
+
+const item = fruits.at(999);
+item; // => undefined
+
+const lastItem = fruits.at(-1);
+lastItem; // => 'grape'`}
       </pre>
 
       <h2>Заполнить массив <span className="hl-5">fill</span></h2>
@@ -480,6 +574,38 @@ employees.sort(function(a, b){
   var dateA=new Date(a.retiredate), dateB=new Date(b.retiredate)
   return dateA-dateB //сортировка по возрастающей дате
   })`}
+      </pre>
+
+      <h3>Сделать массив из объекта <span className="hl-10">Object.keys(), Object.values(), Object.entries()</span></h3>
+      <p>Метод Object.keys() возвращает массив, состоящий из имён свойств объекта (ключей).</p>
+      <p>Метод Object.values() возвращает массив значений свойств переданного ему объекта.</p>
+      <p>Метод Object.entries() возвращает, обработав переданный ему объект, массив, содержащий массивы, представляющие собой пары вида [ключ, значение], представляющие собой имена свойств и значения этих свойств.</p>
+      <pre>{`const icecreamColors = {
+  chocolate: 'brown',
+  vanilla: 'white',
+  strawberry: 'red',
+}
+
+const types = Object.keys(icecreamColors); // => ["chocolate", "vanilla", "strawberry"]
+const colors = Object.values(icecreamColors); // => ['brown', 'white', 'red']
+const etries = Object.values(icecreamColors); // => (3) [Array(2), Array(2), Array(2)]
+0: (2) ['chocolate', 'brown']
+1: (2) ['vanilla', 'white']
+2: (2) ['strawberry', 'red']`}
+      </pre>
+
+      <h3>Оператор расширения и массивы <span className="hl-10">spread</span></h3>
+      <p>Этот оператор полезен, например, при необходимости выполнения объединения нескольких массивов. Кроме того, его использование позволяет избавиться от необходимости использовать метод .splice() в том случае, если нужно удалить из массива какие-то элементы, так как он может быть скомбинирован с методом .slice(), что позволяет избежать изменения исходного массива.</p>
+      <pre>{`const spreadableOne = [1, 2, 3, 4];
+const spreadableTwo = [5, 6, 7, 8];
+
+const combined = [...spreadableOne, ...spreadableTwo];
+// массив combined будет выглядеть так: [1, 2, 3, 4, 5, 6, 7, 8]`}
+      </pre>
+      <p>Сформируем новый массив, представляющий собой исходный массив, из которого удалён элемент. При этом исходный массив меняться не должен.</p>
+      <pre>{`const animals = ['squirrel', 'bear', 'deer', 'salmon', 'rat'];
+const mammals = [...animals.slice(0,3), ...animals.slice(4)];
+//массив mammals примет следующий вид: ['squirrel', 'bear', 'deer', 'rat']`}
       </pre>
     </section>
   );
