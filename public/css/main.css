@@ -154,14 +154,10 @@ dfn {
   border-radius: 3px;
 }
 
-p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection {
-  background: rgb(180, 100, 156);
-  color:#fff;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;}
+p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, li::selection {
+  background: rgb(252, 255, 87);
+  color:rgb(0, 0, 0);
+}
 
 .page__main-page-scratchpad {
   display: grid;

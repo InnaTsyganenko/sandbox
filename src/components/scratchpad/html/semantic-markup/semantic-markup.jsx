@@ -285,11 +285,11 @@ function SemanticMarkup() {
           </li>
         </ul>
         <div className="note">Для лучшей индексации сайта лучше использовать смысловые теги: header, footer, main, section, article и т.д.</div>
-        <a href="http://html5doctor.com/element-index/" target="_blank" rel="noopener noreferrer">HTML5 Element Index - удобный справочник по тегам.</a>
-        <a className="text-link" href="/img/tag-selection.png" target="blank">Открыть схему выбора смысловых тэгов (в новой вкладке)</a>
-        <a href="https://github.com/yoksel/common-words/" target="_blank" rel="noopener noreferrer">Слова, часто используемые в CSS-классах</a>
-        <a href="http://yoksel.github.io/easy-markup/bem-rules/" target="_blank" rel="noopener noreferrer">Как писать классы по БЭМ?</a>
-        <a href="https://ru.bem.info/methodology/quick-start/" target="_blank" rel="noopener noreferrer">Методология БЭМ</a>
+        <p><a className="hl-1" href="http://html5doctor.com/element-index/" target="_blank" rel="noopener noreferrer">HTML5 Element Index - удобный справочник по тегам.</a></p>
+        <p><a className="hl-2" className="text-link" href="/img/tag-selection.png" target="blank">Открыть схему выбора смысловых тэгов (в новой вкладке)</a></p>
+        <p><a className="hl-10" href="https://github.com/yoksel/common-words/" target="_blank" rel="noopener noreferrer">Слова, часто используемые в CSS-классах</a></p>
+        <p><a className="hl-9" href="http://yoksel.github.io/easy-markup/bem-rules/" target="_blank" rel="noopener noreferrer">Как писать классы по БЭМ?</a></p>
+        <p><a className="hl-8" href="https://ru.bem.info/methodology/quick-start/" target="_blank" rel="noopener noreferrer">Методология БЭМ</a></p>
 
         <h2 id={'step-1'}>Шаг 1. Выделяем крупные смысловые блоки на каждой странице сайта: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> и <code>&lt;footer&gt;</code>.</h2>
         <p>Вспомним назначение каждого из указанных семантических тегов:</p>
