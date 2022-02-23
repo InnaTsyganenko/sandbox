@@ -39,6 +39,7 @@ import DemoWhatsNewInEs2015Objects from '../demo-whats-new-in-es2015-objects/dem
 import DemoDataBinding from '../demo-data-binding/demo-data-binding';
 import DemoPatternObserver from '../demo-pattern-observer/demo-pattern-observer';
 import Mock from '../mock/mock';
+import String from '../string/string';
 
 function MainAboutCSS() {
   const meta = {
@@ -134,6 +135,12 @@ function MainAboutCSS() {
               <Link to="#"
                 onClick={() => setState({activeItem: {['events']: true}})}
               >Events
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['string']: true}})}
+              >String
               </Link>
             </li>
             <li>
@@ -346,6 +353,7 @@ function MainAboutCSS() {
           {(state.activeItem['demo-pattern-observer']) && <DemoPatternObserver />}
           {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
           {(state.activeItem['mock']) && <Mock />}
+          {(state.activeItem['string']) && <String />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
