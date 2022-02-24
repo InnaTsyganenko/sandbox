@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import DocumentMeta from 'react-document-meta';
 import {Link} from 'react-router-dom';
-import Header from '../../../header/header';
+import Header from '../../header/header';
 import BasicHtml from '../basic-html/basic-html';
 import HtmlStructure from '../html-structure/html-structure';
 import TextMarkup from '../text-markup/text-markup';
