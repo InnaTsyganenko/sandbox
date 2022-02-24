@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import DocumentMeta from 'react-document-meta';
 import {Link} from 'react-router-dom';
-import Header from '../../../header/header';
+import Header from '../../header/header';
 import GitAndGitHub from '../git-and-github/git-and-github';
 import Vscode from '../vscode/vscode';
 import Emmet from '../emmet/emmet';

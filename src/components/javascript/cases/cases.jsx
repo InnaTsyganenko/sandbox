@@ -19,6 +19,7 @@ function Cases() {
       <p><a href="examples/program-comments-likes-themes/index.html" target="_blank" rel="noopener noreferrer">Лайки-комментарии</a></p>
       <p><a href="examples/program-subscription/index.html" target="_blank" rel="noopener noreferrer">Подписка</a></p>
       <p><a href="examples/drag-and-drop-list/index.html" target="_blank" rel="noopener noreferrer">Список Drag-and-Drop</a></p>
+      <p><a href="examples/slider/index.html" target="_blank" rel="noopener noreferrer">Slider</a></p>
     </section>
   );
 }

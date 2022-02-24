@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import DocumentMeta from 'react-document-meta';
 import {Link} from 'react-router-dom';
-import Header from '../../../header/header';
+import Header from '../../header/header';
 import BasicCss from '../basic-css/basic-css';
 import Selectors from '../selectors/selectors';
 import ToTopButton from '../../to-top-button/to-top-button';
