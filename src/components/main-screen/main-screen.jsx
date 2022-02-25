@@ -83,10 +83,10 @@ function MainScreenScratchpad() {
             </li>
           </ul>
         </nav>
+        <img className="main-page-home__cactus" src="img/cactus.png" alt="Просто кактус, почему нет?" title="Просто кактус, почему нет?" width="200" height="464" />
         <aside className="joke">
           <img src="img/joke.jpg" alt="Шутка про трудоустройство" width="500" height="200" />
         </aside>
-        <img className="main-page-home__cactus" src="img/cactus.png" alt="Просто кактус, почему нет?" title="Просто кактус, почему нет?" width="200" height="464" />
       </main>
     </DocumentMeta>
   );
