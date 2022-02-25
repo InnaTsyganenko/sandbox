@@ -161,7 +161,7 @@ p::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::se
 
 .page__main-page-scratchpad {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-self: start;
   justify-content: start;
   justify-items: start;

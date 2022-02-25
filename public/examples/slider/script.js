@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // инициализация слайдера
   new SimpleAdaptiveSlider('.slider', {
     // чтобы сделать без зацикливания добавить сюда свойство 'loop: false',
-    autoplay: false,
-    interval: 5000,
+    // чтобы сделать автоматическую прокрутку нужно задать  'autoplay: true' и задать interval (миллисекунды),
     swipe: true,
   });
 });
