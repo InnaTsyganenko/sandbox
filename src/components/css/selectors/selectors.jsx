@@ -379,7 +379,7 @@ ul:nth-of-type(2) { }`}
 
       <h2>Как изменить псевдоэлемент через JS</h2>
       <p>Найти через querySelector:</p>
-      <pre>{`document.querySelector('.element'), ':after'`}
+      <pre>{'document.querySelector(".element"), ":after"'}
       </pre>
       <p>Менять стили через JS у псевдоэлементов пока нельзя. Но можно добавить класс для изменения отображения:</p>
       <pre>{`.page-body__container {
