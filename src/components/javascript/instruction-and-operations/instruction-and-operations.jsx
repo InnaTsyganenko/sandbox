@@ -68,7 +68,8 @@ result = (booksCount > 15) ? 'План на год выполнен!' :
       <p>Такой код достаточно сложно читать, особенно если строк станет больше. Здесь будет уместнее использовать условную конструкцию if.</p>
       <p>Если нет ветки else, то вместо условия пишем null:</p>
       <pre>{`
-ad.offer.checkin  == 0 || ad.offer.checkout == 0 ? adElement.querySelector('.popup__text--time').classList.add('hidden') : null;`}
+ad.offer.checkin  == 0 || ad.offer.checkout == 0 ? adElement.querySelector('.popup__text--time')
+.classList.add('hidden') : null;`}
       </pre>
 
       <h2>Конкатенация</h2>
