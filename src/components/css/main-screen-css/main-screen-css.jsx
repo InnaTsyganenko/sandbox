@@ -42,7 +42,7 @@ function MainAboutCSS() {
 
   const [state, setState] = useState({
     activeItem: {
-      ['layout-text']: true,
+      ['basic-css']: true,
     },
   });
 
@@ -266,6 +266,7 @@ function MainAboutCSS() {
           </ul>
           <h2>Articles about CSS</h2>
           <ul>
+            <li><a href="https://doka.guide/css/attr/" target="_blank" rel="noopener noreferrer">CSS-функция attr()</a></li>
             <li><a href="https://htmlacademy.ru/blog/boost/frontend/about-normalize-css" target="_blank" rel="noopener noreferrer">О normalize.css</a></li>
             <li><a href="https://habr.com/ru/post/280125/" target="_blank" rel="noopener noreferrer">REM vs EM – Великий спор</a></li>
             <li><a href="https://medium.com/devschacht/david-gilbertson-rems-and-ems-and-why-you-probably-dont-need-them-3b2b1e785787" target="_blank" rel="noopener noreferrer">Ремы, емы, и почему отказ от них — не проблема</a></li>
