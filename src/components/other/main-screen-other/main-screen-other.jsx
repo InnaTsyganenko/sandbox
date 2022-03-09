@@ -210,9 +210,10 @@ function MainAboutOther() {
           </ul>
           <h4>Crafts</h4>
           <ul>
-            <li><a href="crafts/marker-on-the-map/index.html" target="_blank" rel="noopener noreferrer">Marker on the Map</a></li>
-            <li><a href="crafts/spinner/index.html" target="_blank" rel="noopener noreferrer">Beautyful Spinner</a></li>
-            <li><a href="crafts/slider/index.html" target="_blank" rel="noopener noreferrer">Slider</a></li>
+            <li><a href="examples/marker-on-the-map/index.html" target="_blank" rel="noopener noreferrer">Marker on the Map</a></li>
+            <li><a href="examples/spinner/index.html" target="_blank" rel="noopener noreferrer">Beautyful Spinner</a></li>
+            <li><a href="examples/slider/index.html" target="_blank" rel="noopener noreferrer">Slider</a></li>
+            <li><a href="examples/jellyfish/index.html" target="_blank" rel="noopener noreferrer">Beautyful jellyfish</a></li>
           </ul>
         </div>
         <div className="theory">
