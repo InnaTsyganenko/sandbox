@@ -19,7 +19,8 @@ import HowToStyleTagAbbr from '../how-to/how-to-style-tag-abbr';
 import HowToMakeCustomCheckboxesCorrectly from '../how-to/how-to-make-custom-checkboxes-correctly';
 import HowToMakeDarkTheme from '../how-to/how-to-make-dark-theme';
 import PatternAdapter from '../pattern-adapter/pattern-adapter';
-import WorldWideWeb from '../world-wide-web/world-wide-web';
+import WorldWideWeb from '../www-and-networking/world-wide-web';
+import Networking from '../www-and-networking/networking';
 import HowToHide from '../how-to/how-to-hide';
 import Markdown from '../markdown/markdown';
 import ProgressiveEnhancement from '../progressive-enhancement/progressive-enhancement';
@@ -113,6 +114,14 @@ function MainAboutOther() {
                 onClick={() => setState({activeItem: {['world-wide-web']: true}})}
               >The World Wide Web, API and other...
               </Link>
+              <ul>
+                <li>
+                  <Link to="#"
+                    onClick={() => setState({activeItem: {['networking']: true}})}
+                  >Работа с сетью
+                  </Link>
+                </li>
+              </ul>
             </li>
             <li>
               <Link to="#"
@@ -233,6 +242,7 @@ function MainAboutOther() {
           {(state.activeItem['how-to-style-tag-abbr']) && <HowToStyleTagAbbr />}
           {(state.activeItem['how-to-make-custom-checkboxes-correctly']) && <HowToMakeCustomCheckboxesCorrectly />}
           {(state.activeItem['world-wide-web']) && <WorldWideWeb />}
+          {(state.activeItem['networking']) && <Networking />}
           {(state.activeItem['how-to-hide']) && <HowToHide />}
           {(state.activeItem['markdown']) && <Markdown />}
           {(state.activeItem['how-to-make-dark-theme']) && <HowToMakeDarkTheme />}
