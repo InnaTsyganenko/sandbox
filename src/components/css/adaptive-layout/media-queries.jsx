@@ -5,6 +5,8 @@ function MediaQueries() {
   return (
     <section className="conspect">
       <h1>Медиа-запросы</h1>
+      <p><a href="https://web.dev/building-an-adaptive-favicon/" target="_blank" rel="noopener noreferrer">Building an adaptive favicon</a></p>
+      <p><a href="https://developer.mozilla.org/ru/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener noreferrer">MDN. prefers-color-scheme</a></p>
       <h2>Медиавыражения</h2>
       <p>Медиавыражения — это способ определить в стилях характеристики браузера или предпочтения пользователя, а затем применить стили или запустить другой код на основе этих параметров. Разрешение экрана, ориентация устройства, настройки операционной системы и другое.</p>
       <p>Чтобы медиавыражение заработало, нужно добавить директиву <span className="hl-8">@media</span>.</p>
