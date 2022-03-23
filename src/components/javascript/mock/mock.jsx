@@ -6,7 +6,8 @@ function Mock() {
   return (
     <section className="conspect">
       <h1>Работа с моковыми данными</h1>
-      <pre>{`export const isInPage = (node) => (node === document.body) ? false : document.body.contains(node);
+      <pre>{`export const isInPage = (node) => (node === document.body)
+      ? false : document.body.contains(node);
 
 export const getRandomInteger = (a = 0, b = 1) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -79,7 +80,9 @@ export const options = [
     export const destinations = [
       {
         name: 'Amsterdam',
-        description: 'Amsterdam, city and port, western Netherlands, located on the IJsselmeer and connected to the North Sea. It is the capital and the principal commercial and financial centre of the Netherlands.',
+        description: 'Amsterdam, city and port, western Netherlands,
+        located on the IJsselmeer and connected to the North Sea.
+        It is the capital and the principal commercial and financial centre of the Netherlands.',
         pictures: [
           {
             src: [getRandomInteger(1, 2)],
@@ -105,7 +108,11 @@ export const options = [
       },
       {
         name: 'Geneva',
-        description: 'Geneva is the capital of the Swiss Canton of Geneva located in the south-westernmost corner of Switzerland. The city is situated along the banks of Europes largest lake, Lake Geneva (Lac Léman), at the mouth of the Rhone River and is bordered by the Jura Mountains to the west and the French Alps in the east.',
+        description: 'Geneva is the capital of the Swiss Canton of
+        Geneva located in the south-westernmost corner of Switzerland.
+        The city is situated along the banks of Europes largest lake,
+        Lake Geneva (Lac Léman), at the mouth of the Rhone River and
+        is bordered by the Jura Mountains to the west and the French Alps in the east.',
         pictures: [
           {
             src: [getRandomInteger(15, 17)],
@@ -123,7 +130,10 @@ export const options = [
       },
       {
         name: 'Vienna',
-        description: 'Vienna is the federal capital, largest city and one of nine states of Austria. Vienna is Austria&apos;s primate city, with a population of about 1.9 million. It is the 7th-largest city by population within city limits in the European Union. These regions work together in a European Centrope border region.',
+        description: 'Vienna is the federal capital, largest city and one of nine states of Austria.
+        Vienna is Austria&apos;s primate city, with a population of about 1.9 million.
+        It is the 7th-largest city by population within city limits in the European Union.
+        These regions work together in a European Centrope border region.',
         pictures: [
           {
             src: [getRandomInteger(24, 26)],
@@ -157,7 +167,10 @@ export const options = [
       },
       {
         name: 'Amsterdam',
-        description: 'Amsterdam, city and port, western Netherlands, located on the IJsselmeer and connected to the North Sea. It is the capital and the principal commercial and financial centre of the Netherlands.',
+        description: 'Amsterdam, city and port, western Netherlands,
+        located on the IJsselmeer and connected
+        to the North Sea. It is the capital and the principal
+        commercial and financial centre of the Netherlands.',
         pictures: [
           {
             src: [getRandomInteger(1, 2)],
@@ -194,7 +207,8 @@ export const options = [
       dateTo.setDate(dateFrom.getDate() + getRandomInteger(0, 2));
       dateTo.setHours(dateFrom.getHours() + getRandomInteger(1, 24));
       dateTo.setMinutes(dateFrom.getMinutes() + getRandomInteger(0, 60));
-      const duration = (dateTo - dateFrom) / 60000; // делим на 60000 чтобы получить из миллисекунд минуты
+      const duration = (dateTo - dateFrom) / 60000;
+      // делим на 60000 чтобы получить из миллисекунд минуты
 
       const type = Object.keys(types)[getRandomInteger(0, Object.keys(types).length - 1)];
       const offers = types[type].map((item) => options.find((option) => option.id === item));
