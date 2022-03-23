@@ -241,10 +241,6 @@ dt {
 
 /* content */
 
-ul {
-  list-style: none;
-}
-
 li ul {
   padding-inline-start: 20px;
 }
@@ -286,6 +282,7 @@ p a {
 .contents-list {
   margin: 0 0 0 20px;
   padding: 0;
+  list-style: none;
 }
 
 .contents-link {
@@ -457,6 +454,7 @@ pre {
   justify-self: start;
   justify-content: start;
   width: 100%;
+  list-style: none;
 }
 
 .main-nav-scratchpad__item {
@@ -625,6 +623,12 @@ pre {
 .main-section {
   padding: 1%;
   grid-column: 1/1;
+  position: fixed;
+  width: 350px;
+}
+
+.theory {
+  grid-column: 2/3;
 }
 
 .add-theory-button {

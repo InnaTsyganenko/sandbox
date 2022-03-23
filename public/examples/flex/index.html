@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Flex in work</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body class="page-main">
+    <h1>Flex in work</h1>
+    <p>По умолчанию все флекс-элементы имеют одинаковую высоту, подстраиваясь под самый высокий элемент в ряду. Самый простой способ выровнять отдельный элемент по нижней границе — добавить ему автоматический внешний отступ сверху.</p>
+    <p>В блочном боксе автоматические внешние отступы сверху и снизу работают так же, как если бы их сделали равными 0. Но во флекс-контейнере они позволяют сдвинуть флекс-элемент к верхней или нижней границе. Или даже отцентровать элемент по вертикали, если задать верхний и нижний отступ одновременно.</p>
+    <div class="container-1">
+      <div class="container-1__el container-1__el-1">
+        <p>margin-top: auto;</p>
+      </div>
+      <div class="container-1__el container-1__el-2">
+        <p>margin-bottom: auto;</p>
+      </div>
+      <div class="container-1__el container-1__el-3">
+        <p>margin-top: auto;</p>
+        <p>margin-bottom: auto;</p>
+      </div>
+    </div>
+
+    <div class="container-2">
+      <div class="container-2__el container-2__el-1">
+        <p>margin-left: auto;</p>
+      </div>
+      <div class="container-2__el container-2__el-2">
+        <p>margin-right: auto;</p>
+      </div>
+      <div class="container-2__el container-2__el-3">
+        <p>margin-left: auto;</p>
+        <p>margin-right: auto;</p>
+      </div>
+    </div>
+
+    <div class="cards-container">
+      <h2>Разметка карточек итернет-магазина на флексах.</h2>
+      <ul class="cards-list">
+        <li class="card">
+          <img src="1.jpg" alt="Кофе: длинный путь от сбора ягод до вашей кружки" width="110" height="110">
+          <h2 class="card-title">Кофе: длинный путь от сбора ягод до вашей кружки</h2>
+        </li>
+        <li class="card">
+          <img src="2.jpg" alt="Лучшие машины для дома" width="110" height="110">
+          <h2 class="card-title">Лучшие машины для дома</h2>
+        </li>
+        <li class="card">
+          <img src="4.jpg" alt="Советы от бариста: как выбрать хорошее зерно?" width="110" height="110">
+          <h2 class="card-title">Советы от бариста: как выбрать хорошее зерно?</h2>
+        </li>
+        <li class="card">
+          <img src="5.jpg" alt="Рецепты на новогодние праздники" width="110" height="110">
+          <h2 class="card-title">Рецепты на новогодние праздники</h2>
+        </li>
+        <li class="card">
+          <img src="3.jpg" alt="Руководство по альтернативным способам заварки" width="110" height="110">
+          <h2 class="card-title">Руководство по альтернативным способам заварки</h2>
+        </li>
+      </ul>
+    </div>
+
+    <div class="grid-cards-container">
+      <h2>То же самое на гридах.</h2>
+      <ul class="grid-cards-list">
+        <li class="grid-card">
+          <img src="1.jpg" alt="Кофе: длинный путь от сбора ягод до вашей кружки" width="110" height="110">
+          <h2 class="grid-card-title">Кофе: длинный путь от сбора ягод до вашей кружки</h2>
+        </li>
+        <li class="grid-card">
+          <img src="2.jpg" alt="Лучшие машины для дома" width="110" height="110">
+          <h2 class="grid-card-title">Лучшие машины для дома</h2>
+        </li>
+        <li class="grid-card">
+          <img src="4.jpg" alt="Советы от бариста: как выбрать хорошее зерно?" width="110" height="110">
+          <h2 class="grid-card-title">Советы от бариста: как выбрать хорошее зерно?</h2>
+        </li>
+        <li class="grid-card">
+          <img src="5.jpg" alt="Рецепты на новогодние праздники" width="110" height="110">
+          <h2 class="grid-card-title">Рецепты на новогодние праздники</h2>
+        </li>
+        <li class="grid-card">
+          <img src="3.jpg" alt="Руководство по альтернативным способам заварки" width="110" height="110">
+          <h2 class="grid-card-title">Руководство по альтернативным способам заварки</h2>
+        </li>
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
