@@ -5,7 +5,6 @@ function BasicPHP() {
   return (
     <section className="conspect">
       <h1><abbr data-title="Personal Home Page">PHP</abbr></h1>
-      <p><a href="https://www.php.net/manual/ru/" target="_blank" rel="noopener noreferrer">Руководство по PHP</a></p>
       <h2>Зачем нужен PHP</h2>
       <p><abbr data-title="Personal Home Page">PHP</abbr> придумали в 1995 году.</p>
       <p>Это был набор скриптов для личной страницы одного программиста из Дании, но в итоге проект разросся так, что получил собственный синтаксис, поддержку дополнительных модулей, признание в среде разработчиков и превратился в один из самых популярных языков программирования в мире.</p>
