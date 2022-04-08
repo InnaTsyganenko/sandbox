@@ -10,13 +10,11 @@ function HowToCenterElement() {
         <li>задать элементу автоматические внешние отступы справа и слева.</li>
       </ul>
       <pre>{`width: 500px;
-      margin: 0 auto;`}
+margin: 0 auto;`}
       </pre>
       <p>Это удобный трюк, но работает он с оговорками. Во-первых, таким образом не получится выровнять строчные боксы. Во-вторых, в блочном боксе (в отличие от флекс-контейнера) подобным образом можно выровнять элемент только по горизонтали.</p>
 
       <h2>How to center a “position: absolute” element</h2>
-      <p></p>
-
       <pre>{`position: absolute;
 margin-left: auto;
 margin-right: auto;
@@ -37,6 +35,23 @@ or
 
 width: 100%;
 text-align: center;
+      `}
+      </pre>
+
+      <h2>Отцентровать элемент before/after</h2>
+      <pre>{`.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.button::before {
+  position: absolute;
+  content: "+";
+  color: white;
+  font-size: 36px;
+}
       `}
       </pre>
     </section>
