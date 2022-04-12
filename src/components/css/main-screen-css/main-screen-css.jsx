@@ -34,6 +34,7 @@ import GetDataFromPhotoshop from '../work-with-site-layout/get-data-from-photosh
 import GetDataFromFigma from '../work-with-site-layout/get-data-from-figma';
 import AdaptiveLayout from '../adaptive-layout/adaptive-layout';
 import MediaQueries from '../adaptive-layout/media-queries';
+import CssCounter from '../css-counter/css-counter';
 
 function MainAboutCSS() {
   const meta = {
@@ -221,6 +222,12 @@ function MainAboutCSS() {
               >Custom properties
               </Link>
             </li>
+            <li>
+              <Link to="#"
+                onClick={() => setState({activeItem: {['css-counter']: true}})}
+              >Css counter
+              </Link>
+            </li>
           </ul>
           <h4>
             <Link to="#"
@@ -307,6 +314,7 @@ function MainAboutCSS() {
           {(state.activeItem['styling-select']) && <StylingSelect />}
           {(state.activeItem['adaptive-layout']) && <AdaptiveLayout />}
           {(state.activeItem['media-queries']) && <MediaQueries />}
+          {(state.activeItem['css-counter']) && <CssCounter />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
