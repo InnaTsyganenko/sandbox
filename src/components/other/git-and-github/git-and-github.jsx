@@ -49,6 +49,7 @@ function GitAndGitHub() {
       <a className="text-link" href="http://schacon.github.io/git/gitattributes.html" target="blank">gitattributes(5) Manual Page</a>
       <p>Рекомендуется, особенно тем, кто использует Windows для разработки, явно создавать файл gitattributes.</p>
       <a className="text-link" href="https://github.com/alexkaratarakis/gitattributes/blob/master/Common.gitattributes" target="blank">Пример файла .gitattributes с общими настройками, который можно использовать для своего проекта.</a>
+      <p><a href="https://githooks.com/" target="_blank" rel="noopener noreferrer">Git Hooks</a></p>
       <ol>
         <li>Создание мастера-репозитория(ссылка в htmlacademy)</li>
         <li>Fork - форкаем проект из мастера-репозитория к себе в GitHub</li>

@@ -7,6 +7,7 @@ import MainAboutHTML from '../html/main-screen-html/main-screen-html';
 import MainAboutCSS from '../css/main-screen-css/main-screen-css';
 import MainAboutReact from '../react/main-screen-react/main-screen-react';
 import MainAboutJS from '../javascript/main-screen-js/main-screen-js';
+import MainTypescript from '../typescript/main-screen-typescript/main-screen-typescript';
 import MainAboutPHP from '../php/main-screen-php/main-screen-php';
 import MainAboutOther from '../other/main-screen-other/main-screen-other';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
@@ -26,6 +27,9 @@ function App(props) {
       </Route>
       <Route exact path={AppRoute.JS}>
         <MainAboutJS />
+      </Route>
+      <Route exact path={AppRoute.TYPESCRIPT}>
+        <MainTypescript />
       </Route>
       <Route exact path={AppRoute.REACT}>
         <MainAboutReact />

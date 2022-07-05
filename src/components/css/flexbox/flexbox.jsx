@@ -39,6 +39,7 @@ function Flexbox() {
   return (
     <section className="conspect">
       <h1>Flexbox</h1>
+      <p><img src="./img/flex/css-flexbox-poster.png" alt="Flex значения наглядно" /></p>
       <h2>Свойство display: flex (гибкий), flex-элемент</h2>
       <p>Флексбокс — это первый CSS-механизм, предназначенный для построения сеток и создания сложных раскладок блоков.</p>
       <p>Бокс с типом flex называют флекс-контейнером, а его дочерние боксы — флекс-элементами.</p>
