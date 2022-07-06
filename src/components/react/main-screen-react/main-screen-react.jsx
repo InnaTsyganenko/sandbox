@@ -12,6 +12,8 @@ import AboutRedux from '../redux/redux';
 import JSX from '../jsx/jsx';
 import CreateReactApp from '../create-react-app/create-react-app';
 import WorkWithForm from '../work-with-form/work-with-form';
+import Memo from '../memo/memo';
+import { ItemsMenuReactScreen } from '../../../const';
 
 function MainAboutCSS() {
   const meta = {
@@ -39,78 +41,16 @@ function MainAboutCSS() {
       <Header />
       <main className="page__main" onWheel={listenScrollEvent}>
         <div className="main-section">
-          <h1>Основа основ веба</h1>
+          <h1>Упрости этот интерфейс</h1>
           <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['basic-react']: true}})}
-              >Основы React
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['jsx']: true}})}
-              >JSX
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['create-react-app']: true}})}
-              >Создание приложения на React
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['history-api']: true}})}
-              >History API
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['hooks']: true}})}
-              >Hooks
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['react-patterns']: true}})}
-              >React Patterns
-              </Link>
-            </li>
-            <li>React Router
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['react-router']: true}})}
-                  >React Router
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['react-dom']: true}})}
-                  >React DOM
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['react-router-native']: true}})}
-                  >React Router Native
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['work-with-form']: true}})}
-              >Work with Form in React
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['about-redux']: true}})}
-              >About Redux
-              </Link>
-            </li>
+            {ItemsMenuReactScreen.map((item) => (
+              <li>
+                <Link to="#"
+                  onClick={() => setState({activeItem: {[item.state]: true}})}
+                >{item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
           <h3>Articles</h3>
           <ul>
@@ -128,10 +68,11 @@ function MainAboutCSS() {
           {(state.activeItem['hooks']) && <Hooks />}
           {(state.activeItem['react-patterns']) && <ReactPatterns />}
           {(state.activeItem['react-router']) && <ReactRouter />}
-          {(state.activeItem['about-redux']) && <AboutRedux />}
+          {(state.activeItem['redux']) && <AboutRedux />}
           {(state.activeItem['jsx']) && <JSX />}
           {(state.activeItem['create-react-app']) && <CreateReactApp />}
           {(state.activeItem['work-with-form']) && <WorkWithForm />}
+          {(state.activeItem['memo']) && <Memo />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>

@@ -29,7 +29,7 @@ import Accessibility from '../accessibility/accessibility';
 import NodeNpmBundlers from '../node-npm-bundlers/node-npm-bundlers';
 import Gulp from '../gulp/gulp';
 import Bem from '../bem/bem';
-import { ItemsHowToOtherScreen, ItemsOtherScreen } from '../../../const';
+import { ItemsMenuHowToOtherScreen, ItemsMenuOtherScreen } from '../../../const';
 
 function MainAboutOther() {
   const meta = {
@@ -38,7 +38,7 @@ function MainAboutOther() {
 
   const [state, setState] = useState({
     activeItem: {
-      [ItemsOtherScreen[0].state]: true,
+      [ItemsMenuOtherScreen[0].state]: true,
     },
   });
 
@@ -59,7 +59,7 @@ function MainAboutOther() {
         <div className="main-section">
           <h1>Всякое-разное</h1>
           <ul>
-            {ItemsOtherScreen.map((item) => (
+            {ItemsMenuOtherScreen.map((item) => (
               <li>
                 <Link to="#"
                   onClick={() => setState({activeItem: {[item.state]: true}})}
@@ -70,7 +70,7 @@ function MainAboutOther() {
           </ul>
 
           <h4>How To</h4>
-          <ul>{ItemsHowToOtherScreen.map((item) => (
+          <ul>{ItemsMenuHowToOtherScreen.map((item) => (
             <li>
               <Link to="#"
                 onClick={() => setState({activeItem: {[item.state]: true}})}

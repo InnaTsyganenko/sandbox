@@ -9,7 +9,7 @@ export const AppRoute = {
   OTHER: '/other',
 };
 
-export const ItemsOtherScreen = [
+export const ItemsMenuOtherScreen = [
   {
     title:'Site Checklist',
     state: 'site-checklist',
@@ -76,7 +76,7 @@ export const ItemsOtherScreen = [
   },
 ];
 
-export const ItemsHowToOtherScreen = [
+export const ItemsMenuHowToOtherScreen = [
   {
     title:'Кастомные чекбоксы правильно',
     state: 'how-to-make-custom-checkboxes-correctly',
@@ -116,5 +116,56 @@ export const ItemsHowToOtherScreen = [
   {
     title:'How to setup eslint',
     state: 'how-to-setup-eslint',
+  },
+];
+
+export const ItemsMenuReactScreen = [
+  {
+    title:'Основы React',
+    state: 'basic-react',
+  },
+  {
+    title:'JSX',
+    state: 'jsx',
+  },
+  {
+    title:'Создание приложения на React',
+    state: 'create-react-app',
+  },
+  {
+    title:'History API',
+    state: 'history-api',
+  },
+  {
+    title:'Hooks',
+    state: 'hooks',
+  },
+  {
+    title:'React Patterns',
+    state: 'react-patterns',
+  },
+  {
+    title:'React Router',
+    state: 'react-router',
+  },
+  {
+    title:'React DOM',
+    state: 'react-dom',
+  },
+  {
+    title:'React Router Native',
+    state: 'react-router-native',
+  },
+  {
+    title:'About Redux',
+    state: 'redux',
+  },
+  {
+    title:'Work with form',
+    state: 'work-with-form',
+  },
+  {
+    title:'Мемоизация',
+    state: 'memo',
   },
 ];
