@@ -12,7 +12,7 @@ import AboutRedux from '../redux/redux';
 import JSX from '../jsx/jsx';
 import CreateReactApp from '../create-react-app/create-react-app';
 import WorkWithForm from '../work-with-form/work-with-form';
-import Memo from '../memo/memo';
+import Optimization from '../optimization/optimization';
 import { ItemsMenuReactScreen } from '../../../const';
 
 function MainAboutCSS() {
@@ -72,7 +72,7 @@ function MainAboutCSS() {
           {(state.activeItem['jsx']) && <JSX />}
           {(state.activeItem['create-react-app']) && <CreateReactApp />}
           {(state.activeItem['work-with-form']) && <WorkWithForm />}
-          {(state.activeItem['memo']) && <Memo />}
+          {(state.activeItem['memo']) && <Optimization />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>

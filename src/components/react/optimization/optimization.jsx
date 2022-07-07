@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Memo() {
+function Optimization() {
 
   return (
     <section className="conspect">
@@ -15,8 +15,52 @@ function Memo() {
       </ul>
       <p>Обратите внимание, вызываем мы memorizedIncrement дважды, результат получаем дважды, а индикация о вызове оригинальной функции increment — одна. Мемоизация в деле!</p>
       <p>И неважно, сколько раз будет вызвана мемоизованная функция, оригинальная — только один раз.</p>
-      <p></p>
+      <pre>{`const increment = (value) => {
+  console.log('Функция increment была вызвана');
+  return value + 1;
+};
+
+const memo = (originalFn) => {
+  const result = new Map();
+
+  return (value) => {
+    if (!result.has(value)) {
+      result.set(
+        value,
+        originalFn(value)
+      );
+    }
+
+    return result.get(value);
+  };
+};
+
+memorizedIncrement = memo(increment);
+
+console.log(
+  memorizedIncrement(1) // > 2
+);
+
+console.log(
+  memorizedIncrement(1) // > 2
+);
+
+console.log(
+  memorizedIncrement(3) // > 4
+);
+
+console.log(
+  memorizedIncrement(5) // > 6
+);
+
+console.log(
+  memorizedIncrement(7) // > 8
+);
+
+console.log(
+  memorizedIncrement(9) // > 10
+);`}</pre>
     </section>
   );
 }
-export default Memo;
+export default Optimization;
