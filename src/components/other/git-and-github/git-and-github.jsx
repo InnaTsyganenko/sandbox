@@ -61,15 +61,6 @@ function GitAndGitHub() {
         <li>Merge - по итоговой проверке наставник мёрджит проект</li>
       </ol>
 
-      <h2>Как установить Git и работать в консоли</h2>
-      <ul>
-        <li>
-          <p>Скачиваем и устанавливаем cmder. Запускаем exeшник. Уcтановить bash: внизу cmder Settings - Startup - Specified named task - bash bash - save settings. Закрыть cmder и запустить снова.</p>
-          <p>Чтобы сказать cmder, что мы используем русскую версию Windiws: Settings - Environment - прописать 2 строчки: set LC ALL=ru RU.UTF-8 и set LANG=ru_RU.UTF-8, сохранить.</p>
-        </li>
-        <li>Скачиваем и устанавливаем git с сайта git-scm.com.</li>
-      </ul>
-
       <h2>Настройка git</h2>
       <p>git reset --hard HEAD - откатить изменеия до последнего комита</p>
       <p>git --version - покажет установленную версию git</p>
