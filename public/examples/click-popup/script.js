@@ -1,5 +1,5 @@
 const popup = document.querySelector('.modal');
-const openPopupButton = document.querySelector('.button-open'); 
+const openPopupButton = document.querySelector('.button-open');
 const closePopupButton = popup.querySelector('.button-close');
 
 openPopupButton.addEventListener('click', function (evt) {
@@ -17,7 +17,7 @@ document.addEventListener('keydown', function (evt) {
   }
 });
 
-/* 
+/*
 Запрограммируй всплывающее окно(попап) с контактами компании. Тебе нужен элемент с классом modal.
 
 находим попап
@@ -29,3 +29,6 @@ document.addEventListener('keydown', function (evt) {
 на кнопку закрытия добавляем обработчик события удаляющий класс закрытия попапа
 на кнопку ESC добавим обработчик события удаляющий класс закрытия попапа
  */
+
+console.log('(y + 3x < A) ∨ (x > 20) ∨ (y > 40)');
+console.log(Array.from({length: 20}, (x, i) => i));
