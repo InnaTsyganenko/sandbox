@@ -8,6 +8,7 @@ function NodeNpmBundlers() {
       <h2>Node.js</h2>
       <p><a className="hl-8" href="https://dev.to/yougotwill/portable-nodejs-without-administrator-access-1elk" target="_blank" rel="noopener noreferrer">Portable NodeJS without administrator access</a></p>
       <p><a className="hl-9" href="https://medium.com/@arimgibson/supercharged-portable-vscode-with-git-and-node-js-34afad8f661b" target="_blank" rel="noopener noreferrer">Supercharged Portable VSCode (with Git and Node.js)</a></p>
+      <p><a className="hl-9" href="https://habr.com/ru/company/ruvds/blog/458504/" target="_blank" rel="noopener noreferrer">13 приёмов работы с npm, которые помогают экономить время</a></p>
       <p>Node.js это серверная платформа, что работает на движке Google Chrome – V8, который умеет компилировать JavaScript код в машинный код. В двух словах — Node.js это интерпретатор языка JavaScript. Сам по себе Node.js является C++ приложением, которое получает на входе JavaScript-код и выполняет его.</p>
       <p>Node.js использует событийно-ориентированную модель и неблокирующую ввод/вывод архитектуру, что делает его легковесным и эффективным. Это не фреймворк, и не библиотека, это среда выполнения JavaScript.</p>
       <p className="hl-10"><b>Non-blocking I/O</b></p>
