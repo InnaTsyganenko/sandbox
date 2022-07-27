@@ -18,6 +18,7 @@ import HowToSetTextHighlightColor from '../how-to/how-to-set-text-highlight-colo
 import HowToStyleTagAbbr from '../how-to/how-to-style-tag-abbr';
 import HowToMakeCustomCheckboxesCorrectly from '../how-to/how-to-make-custom-checkboxes-correctly';
 import HowToMakeDarkTheme from '../how-to/how-to-make-dark-theme';
+import HowToSetupEslint from '../how-to/how-to-setup-eslint';
 import PatternAdapter from '../pattern-adapter/pattern-adapter';
 import WorldWideWeb from '../www-and-networking/world-wide-web';
 import Networking from '../www-and-networking/networking';
@@ -28,6 +29,7 @@ import Accessibility from '../accessibility/accessibility';
 import NodeNpmBundlers from '../node-npm-bundlers/node-npm-bundlers';
 import Gulp from '../gulp/gulp';
 import Bem from '../bem/bem';
+import { ItemsMenuHowToOtherScreen, ItemsMenuOtherScreen } from '../../../const';
 
 function MainAboutOther() {
   const meta = {
@@ -36,7 +38,7 @@ function MainAboutOther() {
 
   const [state, setState] = useState({
     activeItem: {
-      ['how-to-set-text-highlight-color']: true,
+      [ItemsMenuOtherScreen[0].state]: true,
     },
   });
 
@@ -57,166 +59,25 @@ function MainAboutOther() {
         <div className="main-section">
           <h1>Всякое-разное</h1>
           <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['site-checklist']: true}})}
-              >Site Checklist
-              </Link>
-              <ul>
-                <li><a href="https://isqua.ru/blog/2016/06/19/crash-test-viorstki/" target="_blank" rel="noopener noreferrer">Краш-тест вёрстки</a></li>
-                <li><a href="https://isqua.ru/blog/2016/05/30/kak-popast-v-makiet-i-nie-soiti-s-uma/" target="_blank" rel="noopener noreferrer">Как попасть в макет и не сойти с ума</a></li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['node-npm-bundlers']: true}})}
-              >Node.js, npm, сборщики модулей
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['git-and-github']: true}})}
-              >GitHub and git
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['gulp']: true}})}
-              >Gulp
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['bem']: true}})}
-              >БЭМ (Блок, Элемент, Модификатор)
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['to-do-scheduling']: true}})}
-              >Как делать дела
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['three-key-software-principles']: true}})}
-              >Three Key Software Principles
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['pattern-adapter']: true}})}
-              >Pattern Adapter
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['world-wide-web']: true}})}
-              >The World Wide Web, API and other...
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['networking']: true}})}
-                  >Работа с сетью
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['markdown']: true}})}
-              >Markdown
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['progressive-enhancement']: true}})}
-              >Метод прогрессивного улучшения
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['accessibility']: true}})}
-              >Accessibility
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['devtools-chrome']: true}})}
-              >Devtools Chrome
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['vscode']: true}})}
-              >VSCode
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['emmet']: true}})}
-              >Шпаргалка по Emmet
-              </Link>
-            </li>
+            {ItemsMenuOtherScreen.map((item) => (
+              <li>
+                <Link to="#"
+                  onClick={() => setState({activeItem: {[item.state]: true}})}
+                >{item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
+
           <h4>How To</h4>
-          <ul>
+          <ul>{ItemsMenuHowToOtherScreen.map((item) => (
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-make-custom-checkboxes-correctly']: true}})}
-              >Кастомные чекбоксы правильно
+                onClick={() => setState({activeItem: {[item.state]: true}})}
+              >{item.title}
               </Link>
             </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-website-publication']: true}})}
-              >How To Publish a Website
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-insert-the-ruble-sign']: true}})}
-              >How To Insert the Ruble Sign
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-push-the-footer-down']: true}})}
-              >How to Push the Footer Down
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-center-element']: true}})}
-              >How to Center Element
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-set-text-highlight-color']: true}})}
-              >How to Set Text Highlight Color
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-style-tag-abbr']: true}})}
-              >How to Style Tag <code>&lt;abbr&gt;</code>
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-hide']: true}})}
-              >How to Hide
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['how-to-make-dark-theme']: true}})}
-              >How to make dark theme
-              </Link>
-            </li>
-          </ul>
+          ))}</ul>
           <h4>Crafts</h4>
           <ul>
             <li><a href="examples/marker-on-the-map/index.html" target="_blank" rel="noopener noreferrer">Marker on the Map</a></li>
@@ -246,6 +107,7 @@ function MainAboutOther() {
           {(state.activeItem['how-to-hide']) && <HowToHide />}
           {(state.activeItem['markdown']) && <Markdown />}
           {(state.activeItem['how-to-make-dark-theme']) && <HowToMakeDarkTheme />}
+          {(state.activeItem['how-to-setup-eslint']) && <HowToSetupEslint />}
           {(state.activeItem['progressive-enhancement']) && <ProgressiveEnhancement />}
           {(state.activeItem['accessibility']) && <Accessibility />}
           {(state.activeItem['node-npm-bundlers']) && <NodeNpmBundlers />}
