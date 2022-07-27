@@ -54,6 +54,7 @@ function NodeNpmBundlers() {
       </ul>
 
       <h2>About npm</h2>
+      <p><a href="https://docs.microsoft.com/ru-ru/learn/modules/create-nodejs-project-dependencies/" target="_blank" rel="noopener noreferrer">Создание нового проекта Node.js и работа с зависимостями</a></p>
       <p><span className="hl-10">npm (node package manager)</span> -  это менеджер зависимостей, автоматически устанавливающийся вместе с Node.js. Он используется для скачивания пакетов из облачного сервера npm, либо для загрузки пакетов на эти сервера. Позволяет устанавливать пакеты как глобально, так и локально.</p>
 
       <h3>Файл package.json</h3>
