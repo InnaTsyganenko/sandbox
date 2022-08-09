@@ -32,15 +32,23 @@ function SemanticMarkup() {
         <p>Перед тем как приступить к разметке, определим !DOCTYPE, укажем язык содержимого, кодировку и заголовок страницы во вкладке браузера.</p>
         <p>Ключевое слово DOCTYPE в файле HTML — это декларация типа документа. Так браузер узнает, на каком языке и с какими технологиями он был создан. Если не укажете DOCTYPE, то ваша страница может отображаться некорректно.</p>
         <pre>{`<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Заголовок страницы</title>
-  </head>
-  <body>
-  </body>
-</html>`}
+  <html lang="ru">
+    <head>
+      <meta charset="utf-8">
+      <title>Заголовок страницы</title>
+    </head>
+    <body>
+      <header class="main-header">
+        <!-- Шапка сайта -->
+      </header>
+      <main>
+        <!-- Основное содержимое страницы -->
+      </main>
+      <footer class="main-footer">
+        <!-- Подвал сайта -->
+      </footer>
+    </body>
+  </html>`}
         </pre>
         <p>
           <button className="add-theory-button"
@@ -196,6 +204,16 @@ function SemanticMarkup() {
                 >Размечаем прогресс и измерения
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="markup-formulas"
+                  className="text-link"
+                  smooth
+                  offset={-20}
+                  duration={500}
+                >Размечаем формулы
+                </Link>
+              </li>
             </ul>
           </li>
           <li>
@@ -299,26 +317,6 @@ function SemanticMarkup() {
           <li><code>&lt;footer&gt;</code> — это заключительная часть всего сайта или смыслового раздела со справочной информацией.<span className="hl-3">Значение: заключительная часть смыслового раздела или всего сайта, обычно содержит информацию об авторах, список литературы, копирайт и так далее.</span><span className="hl-4">Особенности: этих элементов может быть несколько на странице. Тег &lsaquo;footer&rsaquo; не обязан находиться в конце раздела.</span></li>
         </ul>
         <div className="note">Если вы не хотите использовать классы для шапки и подвала сайта, то можете использовать селекторы body &gt; header и body &gt; footer. Эти селекторы не повлияют на хедеры и футеры, вложенные более глубоко.</div>
-        <p>Структура страницы в разметке на этом этапе такая:</p>
-        <pre>{`<!DOCTYPE html>
-  <html lang="ru">
-    <head>
-      <meta charset="utf-8">
-      <title>Заголовок страницы</title>
-    </head>
-    <body>
-      <header class="main-header">
-        <!-- Шапка сайта -->
-      </header>
-      <main>
-        <!-- Основное содержимое страницы -->
-      </main>
-      <footer class="main-footer">
-        <!-- Подвал сайта -->
-      </footer>
-    </body>
-  </html>`}
-        </pre>
 
         <h2 id={'step-2'}>Шаг 2. Размечаем в блоках крупные смысловые разделы</h2>
         <p>На этом этапе выделяются такие элементы, как:</p>
@@ -491,8 +489,11 @@ function SemanticMarkup() {
   <meter value="100" max="100">Кипяток</meter>`}
         </pre>
 
-        <h3 id={'step-5'}>Шаг 5. Размечаем фразовые элементы</h3>
-        <p>фразовые элементы: img, a, video, b, i, strong, em, time, span.</p>
+        <h3 id={'markup-formulas'}>Размечаем формулы</h3>
+        <p><code>&lt;var&gt;</code> - (HTML Variable Element) определяет математические / переменные величины. Браузеры отображают курсивом.</p>
+        <p><code>&lt;samp&gt;</code> - результат вывода компьютерной программы или скрипта. Моноширинный шрифт.</p>
+        <p><code>&lt;kbd&gt;</code> - вводимые пользователем нажатия клавиш / текст, набираемый на клавиатуре. Моноширинный шрифт.</p>
+        <p><code>&lt;code&gt;</code> - компьютерный код. Моноширинный шрифт.</p>
 
         <h3 id={'markup-images'}>Размечаем изображения: <code>&lt;img&gt;</code></h3>
         <p><a className="text-link" href="https://htmlacademy.ru/blog/boost/graphics/content-or-decor-img" target="blank">Как отличить контентное изображение от декоративного</a></p>

@@ -60,7 +60,7 @@ function MainAboutOther() {
           <h1>Всякое-разное</h1>
           <ul>
             {ItemsMenuOtherScreen.map((item) => (
-              <li>
+              <li key={item.state}>
                 <Link to="#"
                   onClick={() => setState({activeItem: {[item.state]: true}})}
                 >{item.title}
@@ -71,13 +71,14 @@ function MainAboutOther() {
 
           <h4>How To</h4>
           <ul>{ItemsMenuHowToOtherScreen.map((item) => (
-            <li>
+            <li key={item.state}>
               <Link to="#"
                 onClick={() => setState({activeItem: {[item.state]: true}})}
               >{item.title}
               </Link>
             </li>
-          ))}</ul>
+          ))}
+          </ul>
           <h4>Crafts</h4>
           <ul>
             <li><a href="examples/marker-on-the-map/index.html" target="_blank" rel="noopener noreferrer">Marker on the Map</a></li>

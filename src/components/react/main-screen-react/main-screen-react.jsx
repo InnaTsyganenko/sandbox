@@ -44,7 +44,7 @@ function MainAboutCSS() {
           <h1>Упрости этот интерфейс</h1>
           <ul>
             {ItemsMenuReactScreen.map((item) => (
-              <li>
+              <li key={item.state}>
                 <Link to="#"
                   onClick={() => setState({activeItem: {[item.state]: true}})}
                 >{item.title}

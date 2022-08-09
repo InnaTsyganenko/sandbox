@@ -15,7 +15,7 @@ function HowToSetupEslint() {
         </li>
         <li>
           <p>В package.json прописываем правила:
-            <pre><code>{`"husky": {
+            <pre>{`"husky": {
               "hooks": {
                 "pre-commit": "lint-staged"
               }
@@ -26,8 +26,8 @@ function HowToSetupEslint() {
                 "git add"
               ]
             }`}
-            </code></pre>
-            </p>
+            </pre>
+          </p>
         </li>
       </ol>
       <p>Теперь в репозиторий нельзя будеть залить плохой код, а многие ошибки линтер сам будет исправлять.</p>
