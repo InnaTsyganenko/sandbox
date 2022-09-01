@@ -58,14 +58,12 @@ function Text() {
         <li>pre-line — как normal, лишние пробелы схлопываются, но строки переносятся на символе переноса строки, на <code>&lt;br&gt;</code> и по мере заполнения строки.</li>
       </ul>
 
-      <h2>Свойство text-decoration: text-decoration-line text-decoration-style text-decoration-color</h2>
-      <ol>
-        <li>underline — подчёркивание;</li>
-        <li>line-through — зачёркивание;</li>
-        <li>overline — надчёркивание;</li>
-        <li>none — убирает вышеперечисленные эффекты.</li>
-      </ol>
-      <p>К тексту можно одновременно применить несколько эффектов, если перечислить значения через пробел.</p>
+      <h2>Свойство text-decoration: text-decoration-line text-decoration-style text-decoration-color text-decoration-thickness</h2>
+      <pre>{`
+      .thick {
+        text-decoration: solid underline purple 4px;
+      }`}
+      </pre>
 
       <h2>Свойство text-transform, регистр символов</h2>
       <ol>
