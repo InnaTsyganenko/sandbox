@@ -13,6 +13,7 @@ import Tables from '../tables/tables';
 import Forms from '../forms/forms';
 import FormValidation from '../forms/form-validation';
 import AboutId from '../about-id/about-id';
+import AboutCrossoriginAndCors from '../about-crossorigin-and-cors/about-crossorigin-and-cors';
 import SemanticMarkup from '../semantic-markup/semantic-markup';
 import HtmlStandard from '../html-standard/html-standard';
 import AboutValidator from '../about-validator/about-validator';
@@ -141,6 +142,12 @@ function MainAboutHTML() {
             </li>
             <li>
               <Link to="#"
+                onClick={() => setStateFunction('about-crossorigin-and-cors')}
+              >Атрибут crossorigin и политика CORS
+              </Link>
+            </li>
+            <li>
+              <Link to="#"
                 onClick={() => setStateFunction('attribute-content-editable')}
               >Атрибут contentEditable
               </Link>
@@ -162,6 +169,7 @@ function MainAboutHTML() {
           {(state.activeItem['html-standard']) && <HtmlStandard />}
           {(state.activeItem['validator']) && <AboutValidator />}
           {(state.activeItem['about-id']) && <AboutId />}
+          {(state.activeItem['about-crossorigin-and-cors']) && <AboutCrossoriginAndCors />}
           {(state.activeItem['attribute-content-editable']) && <AtribbuteContentEditable />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
