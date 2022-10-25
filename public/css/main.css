@@ -296,9 +296,8 @@ p a {
 /* highlighters */
 
 code {
-  background-color: rgba(127, 211, 190, 0.39);
+  background-color: transparent;
   padding: 1px;
-  box-shadow: 0px 0px 1px 0px rgba(68, 68, 68, 0.5);
 }
 
 pre {
@@ -308,7 +307,8 @@ pre {
   padding: 5px 20px;
   box-shadow: 0px 0px 3px 0px rgba(68, 68, 68, 0.5);
   width: inherit;
-  max-width: 1500px;
+  max-width: 100%;
+  white-space: pre-wrap;
 }
 
 .hl-1 {
@@ -358,7 +358,7 @@ pre {
 
 .hl-6 {
   border-radius: 3px;
-  background-color: rgb(170, 226, 17);
+  background-color: rgb(133, 175, 17);
   padding: 0 4px;
   box-shadow: 0px 0px 1px 0px rgba(68, 68, 68, 0.5);
   width: fit-content;
