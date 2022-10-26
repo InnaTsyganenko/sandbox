@@ -5,6 +5,8 @@ function SiteChecklist() {
   return (
     <section className="conspect">
       <h1>Чек-лист сайта</h1>
+      <p><a href="https://isqua.ru/blog/2016/06/19/crash-test-viorstki/" target="_blank" rel="noopener noreferrer">Краш-тест вёрстки</a></p>
+      <p><a href="https://isqua.ru/blog/2016/05/30/kak-popast-v-makiet-i-nie-soiti-s-uma/" target="_blank" rel="noopener noreferrer">Как попасть в макет и не сойти с ума</a></p>
       <p>
         <input type="checkbox" id={1} className="checkbox" />
         <label htmlFor={1}>Фавиконка установлена.</label>

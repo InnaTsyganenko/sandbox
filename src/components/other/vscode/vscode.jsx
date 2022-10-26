@@ -5,6 +5,16 @@ function Vscode() {
   return (
     <section className="conspect">
       <h1>VSCode</h1>
+      <div className="note">
+        <h5>Интегри́рованная среда́ разрабо́тки, ИСP (англ. Integrated development environment — IDE), также единая среда разработки, ЕСР — комплекс программных средств, используемый программистами для разработки программного обеспечения (ПО).</h5>
+        <p>Среда разработки включает в себя:</p>
+        <ul>
+          <li>текстовый редактор,</li>
+          <li>Транслятор (компилятор и/или интерпретатор),</li>
+          <li>средства автоматизации сборки,</li>
+          <li>отладчик.</li>
+        </ul>
+      </div>
       <p><span className="hl-6">End - курсор в конец строки</span></p>
       <a className="text-link" href="https://nikomedvedev.ru/other/vscodeshortcuts/hotkeys.html" target="blank">Горячие клавиши Visual Studio Code</a>
       <div className="note">
