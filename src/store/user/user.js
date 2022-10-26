@@ -1,5 +1,5 @@
-import {createReducer} from '@reduxjs/toolkit';
-import {changeCurrentTheme} from '../action';
+import { createReducer } from '@reduxjs/toolkit';
+import { changeCurrentTheme } from '../action';
 
 const initialState = {
   currentTheme: 'day',

@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import DocumentMeta from 'react-document-meta';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { ContentsHtml } from '../../../const';
 import Header from '../../header/header';
 import BasicHtml from '../basic-html/basic-html';
 import HtmlStructure from '../html-structure/html-structure';
@@ -21,15 +22,13 @@ import ToTopButton from '../../to-top-button/to-top-button';
 import AtribbuteContentEditable from '../attribute-content-editable/attribute-content-editable';
 
 function MainAboutHTML() {
-  const meta = {
-    title: 'About HTML',
-  };
 
-  const [state, setState] = useState({
-    activeItem: {
-      ['basic-html']: true,
-    },
-  });
+  const [title, setTitle] = useState(ContentsHtml[0].name);
+  const [state, setState] = useState(ContentsHtml[0].state);
+
+  const meta = {
+    title: title,
+  };
 
   const [scrollState, setScrollState] = useState(false);
 
@@ -41,7 +40,10 @@ function MainAboutHTML() {
     }
   }
 
-  const setStateFunction = (value) => setState({activeItem: {[value]: true}});
+  const setStateFunction = (name, key) => {
+    setTitle(name);
+    setState(key);
+  };
 
   return (
     <DocumentMeta {...meta}>
@@ -49,132 +51,42 @@ function MainAboutHTML() {
       <main className="page__main" onWheel={listenScrollEvent}>
         <div className="main-section">
           <h1>Основа основ веба</h1>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('basic-html')}
-              >Основы HTML
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('structure-html')}
-              >Структура HTML-документа
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('semantic-markup')}
-              >Семантическая разметка
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('text-markup')}
-                  >Разметка текста
+          {ContentsHtml.length > 0 && (
+            <ul>
+              {ContentsHtml.map((content) => (
+                <li className="" id="" key={content.state}>
+                  <Link
+                    className=""
+                    onClick={() => setStateFunction(content.name, content.state)}
+                    to="#"
+                  >{content.name}
                   </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('html-standard')}
-                  >Как работать со стандартом
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('validator')}
-                  >О валидаторе html
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('links')}
-              >Ссылки
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('images')}
-              >Изображения
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('favicon')}
-                  >Favicon
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('svg')}
-                  >SVG - scalable vector graphics
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('tables')}
-              >Таблицы в HTML
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('forms')}
-              >Формы в HTML
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setStateFunction('form-validation')}
-                  >Form validation
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('about-id')}
-              >Атрибут id
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('about-crossorigin-and-cors')}
-              >Атрибут crossorigin и политика CORS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setStateFunction('attribute-content-editable')}
-              >Атрибут contentEditable
-              </Link>
-            </li>
-          </ul>
+                </li>))}
+            </ul>
+          )}
         </div>
         <div className="theory">
-          {(state.activeItem['basic-html']) && <BasicHtml />}
-          {(state.activeItem['structure-html']) && <HtmlStructure />}
-          {(state.activeItem['text-markup']) && <TextMarkup />}
-          {(state.activeItem['links']) && <Links />}
-          {(state.activeItem['images']) && <Images />}
-          {(state.activeItem['favicon']) && <Favicon />}
-          {(state.activeItem['svg']) && <SVG />}
-          {(state.activeItem['tables']) && <Tables />}
-          {(state.activeItem['forms']) && <Forms />}
-          {(state.activeItem['form-validation']) && <FormValidation />}
-          {(state.activeItem['semantic-markup']) && <SemanticMarkup />}
-          {(state.activeItem['html-standard']) && <HtmlStandard />}
-          {(state.activeItem['validator']) && <AboutValidator />}
-          {(state.activeItem['about-id']) && <AboutId />}
-          {(state.activeItem['about-crossorigin-and-cors']) && <AboutCrossoriginAndCors />}
-          {(state.activeItem['attribute-content-editable']) && <AtribbuteContentEditable />}
+          {(state === 'basic-html') && <BasicHtml />}
+          {(state === 'structure-html') && <HtmlStructure />}
+          {(state === 'text-markup') && <TextMarkup />}
+          {(state === 'links') && <Links />}
+          {(state === 'images') && <Images />}
+          {(state === 'favicon') && <Favicon />}
+          {(state === 'svg') && <SVG />}
+          {(state === 'tables') && <Tables />}
+          {(state === 'forms') && <Forms />}
+          {(state === 'form-validation') && <FormValidation />}
+          {(state === 'semantic-markup') && <SemanticMarkup />}
+          {(state === 'html-standard') && <HtmlStandard />}
+          {(state === 'validator') && <AboutValidator />}
+          {(state === 'attribute-id') && <AboutId />}
+          {(state === 'about-crossorigin-and-cors') && <AboutCrossoriginAndCors />}
+          {(state === 'attribute-content-editable') && <AtribbuteContentEditable />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>
     </DocumentMeta>
   );
 }
+
 export default MainAboutHTML;
