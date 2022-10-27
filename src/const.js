@@ -73,6 +73,8 @@ export const ContentsHtml = [
   {
     name: 'Атрибут contentEditable',
     state:'attribute-content-editable',
+  },
+];
 
 export const ItemsMenuOtherScreen = [
   {

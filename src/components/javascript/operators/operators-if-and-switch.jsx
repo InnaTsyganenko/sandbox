@@ -101,7 +101,7 @@ heart.onclick = function () {
 
       <h2>Оператор switch</h2>
       <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch#syntax" target="_blank" rel="noopener noreferrer">MDN. switch</a></p>
-      <p>Такой вот код сложный и перегруженный код:</p>
+      <p>Такой вот сложный и перегруженный код:</p>
       <pre>{`const weathers = ['Солнечно', 'Ветрено', 'Дождливо', 'Морозно', 'Пасмурно', 'Гололёд'];
 
 const getСlothing = function (weather) {
