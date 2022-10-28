@@ -16,6 +16,7 @@ const rootPersistConfig = {
 const userPersistConfig = {
   key: 'USER',
   storage,
+  whitelist: ['currentTheme', 'currentPage'],
 };
 
 const rootReducer = combineReducers({

@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import browserHistory from '../../browser-history';
 import {connect} from 'react-redux';
 import {Switch, Route} from 'react-router-dom';
 import {AppRoute} from '../../const';
@@ -11,8 +13,16 @@ import MainTypescript from '../typescript/main-screen-typescript/main-screen-typ
 import MainAboutPHP from '../php/main-screen-php/main-screen-php';
 import MainAboutOther from '../other/main-screen-other/main-screen-other';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
+import { resetPage } from '../../store/action';
 
-function App(props) {
+function App() {
+  const dispatch = useDispatch();
+
+  browserHistory.listen((location) =>  {
+    if (location.pathname === AppRoute.ROOT) {
+      dispatch(resetPage());
+    }
+  });
 
   return (
     <Switch>
