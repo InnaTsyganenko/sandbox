@@ -76,6 +76,144 @@ export const ContentsHtml = [
   },
 ];
 
+export const ContentsCss = [
+  {
+    name:'Основы CSS',
+    state: 'basic-css',
+  },
+  {
+    name: 'Селекторы в CSS',
+    state:'selectors',
+  },
+  {
+    name: 'Flow, grids and layout',
+    state:'flow-grids-layout',
+  },
+  {
+    name: 'Grids and Microgrids',
+    state: 'grids-and-microgrids',
+  },
+  {
+    name: 'Positioning',
+    state: 'positioning',
+  },
+  {
+    name: 'Building a site layout',
+    state: 'building-site-layout',
+  },
+  {
+    name: 'Adaptive Layout',
+    state: 'adaptive-layout',
+  },
+  {
+    name: 'Media queries',
+    state: 'media-queries',
+  },
+  {
+    name: 'Grid',
+    state: 'grid',
+  },
+  {
+    name: 'Flexbox',
+    state: 'flexbox',
+  },
+  {
+    name: 'Flex layout algorithm',
+    state: 'flex-markup-algorithm',
+  },
+  {
+    name: 'Methods for constructing grids on flexboxes',
+    state: 'methods-for-constructing-grids-on-flexboxes',
+  },
+  {
+    name: 'Fonts',
+    state: 'fonts',
+  },
+  {
+    name: 'Text',
+    state: 'text',
+  },
+  {
+    name: 'Layout of text content of pages',
+    state: 'layout-text',
+  },
+  {
+    name: 'Typography',
+    state: 'typography',
+  },
+  {
+    name: 'Gradient',
+    state: 'gradient',
+  },
+  {
+    name: 'Backgrounds and Frames',
+    state: 'bg-and-frames',
+  },
+  {
+    name: 'Animations in CSS',
+    state: 'animations',
+  },
+  {
+    name: '2D Transformations in CSS',
+    state: '2d-transformations',
+  },
+  {
+    name: 'CSS Filters',
+    state: 'css-filters',
+  },
+  {
+    name: 'CSS Table',
+    state: 'css-table',
+  },
+  {
+    name: 'Shadows',
+    state: 'shadows',
+  },
+  {
+    name: 'Inheritance and Cascading в CSS',
+    state: 'inheritance-and-cascading',
+  },
+  {
+    name: 'Custom properties',
+    state: 'custom-properties',
+  },
+  {
+    name: 'Css counter',
+    state: 'css-counter',
+  },
+  {
+    name: 'Less',
+    state: 'less',
+  },
+  {
+    name: 'Terms',
+    state: 'terms',
+  },
+  {
+    name: 'Get data from Photoshop',
+    state: 'photoshop',
+  },
+  {
+    name: 'Get data from Figma',
+    state: 'figma',
+  },
+  {
+    name: 'Styling Checkbox and Radio',
+    state: 'styling-checkbox-and-radio',
+  },
+  {
+    name: 'Styling Select',
+    state: 'styling-select',
+  },
+];
+
+export const ContentsJS = [
+  {
+    name: '',
+    state: '',
+  },
+];
+
 export const ItemsMenuOtherScreen = [
   {
     title:'Site Checklist',

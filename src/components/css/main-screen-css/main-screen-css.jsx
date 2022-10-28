@@ -35,17 +35,27 @@ import GetDataFromFigma from '../work-with-site-layout/get-data-from-figma';
 import AdaptiveLayout from '../adaptive-layout/adaptive-layout';
 import MediaQueries from '../adaptive-layout/media-queries';
 import CssCounter from '../css-counter/css-counter';
+import { ContentsCss } from '../../../const';
+import { changeCurrentPage } from '../../../store/action';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentPage } from '../../../store/user/selectors';
 
 function MainAboutCSS() {
+  const dispatch = useDispatch();
+  const currentPage = useSelector(getCurrentPage);
+
+  const [title, setTitle] = useState(currentPage === '' ? ContentsCss[0].name : ContentsCss.find((element) => element.state === currentPage).name);
+  const [state, setState] = useState(currentPage === '' ? ContentsCss[0].state : currentPage);
+
   const meta = {
-    title: 'About CSS',
+    title: title,
   };
 
-  const [state, setState] = useState({
-    activeItem: {
-      ['basic-css']: true,
-    },
-  });
+  const setStateFunction = (name, key) => {
+    setTitle(name);
+    setState(key);
+    dispatch(changeCurrentPage(key));
+  };
 
   const [scrollState, setScrollState] = useState(false);
 
@@ -63,214 +73,20 @@ function MainAboutCSS() {
       <main className="page__main" onWheel={listenScrollEvent}>
         <div className="main-section">
           <h1>По красоте чтобы...</h1>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
+          {ContentsCss.length > 0 && (
+            <ul>
+              {ContentsCss.map((content) => (
+                <li className="" id="" key={content.state}>
+                  <Link
+                    className=""
+                    onClick={() => setStateFunction(content.name, content.state)}
+                    to="#"
+                  >{content.name}
                   </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                  <ul>
-                    <li>
-                      <Link to="#"
-                        onClick={() => setState({activeItem: {['']: true}})}
-                      >
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['']: true}})}
-                  >
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['']: true}})}
-              >
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['bg-and-frames']: true}})}
-              >Backgrounds and Frames
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['animations']: true}})}
-              >Animations in CSS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['2d-transformations']: true}})}
-              >2D Transformations in CSS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['css-filters']: true}})}
-              >CSS Filters
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['css-table']: true}})}
-              >CSS Table
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['shadows']: true}})}
-              >Shadows
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['inheritance-and-cascading']: true}})}
-              >Inheritance and Cascading в CSS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['custom-properties']: true}})}
-              >Custom properties
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['css-counter']: true}})}
-              >Css counter
-              </Link>
-            </li>
-          </ul>
-          <h4>
-            <Link to="#"
-              onClick={() => setState({activeItem: {['less']: true}})}
-            >Less
-            </Link>
-          </h4>
-          <h3>Работа с макетом</h3>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['terms']: true}})}
-              >Terms
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['photoshop']: true}})}
-              >Get data from Photoshop
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['figma']: true}})}
-              >Get data from Figma
-              </Link>
-            </li>
-          </ul>
-          <h3>Styling Forms</h3>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['styling-checkbox-and-radio']: true}})}
-              >Styling Checkbox and Radio
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['styling-select']: true}})}
-              >Styling Select
-              </Link>
-            </li>
-          </ul>
+                </li>))}
+            </ul>
+          )}
+
           <h2>Articles about CSS</h2>
           <ul>
             <li><a href="https://doka.guide/css/attr/" target="_blank" rel="noopener noreferrer">CSS-функция attr()</a></li>
@@ -283,38 +99,38 @@ function MainAboutCSS() {
           </ul>
         </div>
         <div className="theory">
-          {(state.activeItem['basic-css']) && <BasicCss />}
-          {(state.activeItem['selectors']) && <Selectors />}
-          {(state.activeItem['grid']) && <Grid />}
-          {(state.activeItem['flow-grids-layout']) && <FlowGridsLayout />}
-          {(state.activeItem['grids-and-microgrids']) && <GridsAndMicrogrids />}
-          {(state.activeItem['positioning']) && <Positioning />}
-          {(state.activeItem['building-site-layout']) && <BuildingSiteLayout />}
-          {(state.activeItem['gradient']) && <Gradient />}
-          {(state.activeItem['bg-and-frames']) && <BackgroundsAndFrames />}
-          {(state.activeItem['animations']) && <Animations />}
-          {(state.activeItem['2d-transformations']) && <TwoDimensionalTransfomations />}
-          {(state.activeItem['css-filters']) && <CSSFilters />}
-          {(state.activeItem['css-table']) && <CSSTable />}
-          {(state.activeItem['flexbox']) && <Flexbox />}
-          {(state.activeItem['flex-markup-algorithm']) && <FlexboxMarkupAlgorithm />}
-          {(state.activeItem['methods-for-constructing-grids-on-flexboxes']) && <MethodsForConstructingGridsOnFlexboxes />}
-          {(state.activeItem['shadows']) && <Shadows />}
-          {(state.activeItem['fonts']) && <Fonts />}
-          {(state.activeItem['typography']) && <Typography />}
-          {(state.activeItem['text']) && <Text />}
-          {(state.activeItem['layout-text']) && <LayoutText />}
-          {(state.activeItem['inheritance-and-cascading']) && <InheritanceAndCascading />}
-          {(state.activeItem['custom-properties']) && <CustomProperties />}
-          {(state.activeItem['less']) && <Less />}
-          {(state.activeItem['terms']) && <Terms />}
-          {(state.activeItem['photoshop']) && <GetDataFromPhotoshop />}
-          {(state.activeItem['figma']) && <GetDataFromFigma />}
-          {(state.activeItem['styling-checkbox-and-radio']) && <StylingCheckboxAndRadio />}
-          {(state.activeItem['styling-select']) && <StylingSelect />}
-          {(state.activeItem['adaptive-layout']) && <AdaptiveLayout />}
-          {(state.activeItem['media-queries']) && <MediaQueries />}
-          {(state.activeItem['css-counter']) && <CssCounter />}
+          {(state === 'basic-css') && <BasicCss />}
+          {(state === 'selectors') && <Selectors />}
+          {(state === 'grid') && <Grid />}
+          {(state === 'flow-grids-layout') && <FlowGridsLayout />}
+          {(state === 'grids-and-microgrids') && <GridsAndMicrogrids />}
+          {(state === 'positioning') && <Positioning />}
+          {(state === 'building-site-layout') && <BuildingSiteLayout />}
+          {(state === 'gradient') && <Gradient />}
+          {(state === 'bg-and-frames') && <BackgroundsAndFrames />}
+          {(state === 'animations') && <Animations />}
+          {(state === '2d-transformations') && <TwoDimensionalTransfomations />}
+          {(state === 'css-filters') && <CSSFilters />}
+          {(state === 'css-table') && <CSSTable />}
+          {(state === 'flexbox') && <Flexbox />}
+          {(state === 'flex-markup-algorithm') && <FlexboxMarkupAlgorithm />}
+          {(state === 'methods-for-constructing-grids-on-flexboxes') && <MethodsForConstructingGridsOnFlexboxes />}
+          {(state === 'shadows') && <Shadows />}
+          {(state === 'fonts') && <Fonts />}
+          {(state === 'typography') && <Typography />}
+          {(state === 'text') && <Text />}
+          {(state === 'layout-text') && <LayoutText />}
+          {(state === 'inheritance-and-cascading') && <InheritanceAndCascading />}
+          {(state === 'custom-properties') && <CustomProperties />}
+          {(state === 'less') && <Less />}
+          {(state === 'terms') && <Terms />}
+          {(state === 'photoshop') && <GetDataFromPhotoshop />}
+          {(state === 'figma') && <GetDataFromFigma />}
+          {(state === 'styling-checkbox-and-radio') && <StylingCheckboxAndRadio />}
+          {(state === 'styling-select') && <StylingSelect />}
+          {(state === 'adaptive-layout') && <AdaptiveLayout />}
+          {(state === 'media-queries') && <MediaQueries />}
+          {(state === 'css-counter') && <CssCounter />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>

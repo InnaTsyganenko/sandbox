@@ -38,6 +38,12 @@ function MainAboutHTML() {
 
   const [scrollState, setScrollState] = useState(false);
 
+  const setStateFunction = (name, key) => {
+    setTitle(name);
+    setState(key);
+    dispatch(changeCurrentPage(key));
+  };
+
   function listenScrollEvent() {
     if (window.scrollY > 500 ) {
       setScrollState(true);
@@ -45,12 +51,6 @@ function MainAboutHTML() {
       setScrollState(false);
     }
   }
-
-  const setStateFunction = (name, key) => {
-    setTitle(name);
-    setState(key);
-    dispatch(changeCurrentPage(key));
-  };
 
   return (
     <DocumentMeta {...meta}>
