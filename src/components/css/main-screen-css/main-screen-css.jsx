@@ -66,50 +66,50 @@ function MainAboutCSS() {
           <ul>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['basic-css']: true}})}
-              >Основы CSS
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['selectors']: true}})}
-              >Селекторы в CSS
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['flow-grids-layout']: true}})}
-              >Flow, grids and layout
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
               <ul>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['grids-and-microgrids']: true}})}
-                  >Grids and Microgrids
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['positioning']: true}})}
-                  >Positioning
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['building-site-layout']: true}})}
-                  >Building a site layout
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['adaptive-layout']: true}})}
-                  >Adaptive Layout
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                   <ul>
                     <li>
                       <Link to="#"
-                        onClick={() => setState({activeItem: {['media-queries']: true}})}
-                      >Media queries
+                        onClick={() => setState({activeItem: {['']: true}})}
+                      >
                       </Link>
                     </li>
                   </ul>
@@ -118,60 +118,60 @@ function MainAboutCSS() {
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['grid']: true}})}
-              >Grid
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['flexbox']: true}})}
-              >Flexbox
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
               <ul>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['flex-markup-algorithm']: true}})}
-                  >Flex layout algorithm
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['methods-for-constructing-grids-on-flexboxes']: true}})}
-                  >Methods for constructing grids on flexboxes
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
               </ul>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['fonts']: true}})}
-              >Fonts
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['text']: true}})}
-              >Text
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
               <ul>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['layout-text']: true}})}
-                  >Layout of text content of pages
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
                 <li>
                   <Link to="#"
-                    onClick={() => setState({activeItem: {['typography']: true}})}
-                  >Typography
+                    onClick={() => setState({activeItem: {['']: true}})}
+                  >
                   </Link>
                 </li>
               </ul>
             </li>
             <li>
               <Link to="#"
-                onClick={() => setState({activeItem: {['gradient']: true}})}
-              >Gradient
+                onClick={() => setState({activeItem: {['']: true}})}
+              >
               </Link>
             </li>
             <li>
