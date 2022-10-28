@@ -20,11 +20,17 @@ import HtmlStandard from '../html-standard/html-standard';
 import AboutValidator from '../about-validator/about-validator';
 import ToTopButton from '../../to-top-button/to-top-button';
 import AtribbuteContentEditable from '../attribute-content-editable/attribute-content-editable';
+import {useDispatch, useSelector} from 'react-redux';
+import { getCurrentPage } from '../../../store/user/selectors';
+import { changeCurrentPage } from '../../../store/action';
 
 function MainAboutHTML() {
 
-  const [title, setTitle] = useState(ContentsHtml[0].name);
-  const [state, setState] = useState(ContentsHtml[0].state);
+  const dispatch = useDispatch();
+  const currentPage = useSelector(getCurrentPage);
+
+  const [title, setTitle] = useState(currentPage === '' ? ContentsHtml[0].name : ContentsHtml.find((element) => element.state === currentPage).name);
+  const [state, setState] = useState(currentPage === '' ? ContentsHtml[0].state : currentPage);
 
   const meta = {
     title: title,
@@ -43,6 +49,7 @@ function MainAboutHTML() {
   const setStateFunction = (name, key) => {
     setTitle(name);
     setState(key);
+    dispatch(changeCurrentPage(key));
   };
 
   return (
