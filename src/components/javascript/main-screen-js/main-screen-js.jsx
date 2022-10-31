@@ -40,17 +40,28 @@ import DemoDataBinding from '../demo-data-binding/demo-data-binding';
 import DemoPatternObserver from '../demo-pattern-observer/demo-pattern-observer';
 import Mock from '../mock/mock';
 import String from '../string/string';
+import { ContentsJS } from '../../../const';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentPage } from '../../../store/user/selectors';
+import { changeCurrentPage } from '../../../store/action';
 
 function MainAboutCSS() {
+
+  const dispatch = useDispatch();
+  const currentPage = useSelector(getCurrentPage);
+
+  const [title, setTitle] = useState(currentPage === '' ? ContentsJS[0].name : ContentsJS.find((element) => element.state === currentPage).name);
+  const [state, setState] = useState(currentPage === '' ? ContentsJS[0].state : currentPage);
+
   const meta = {
-    title: 'About JS',
+    title: title,
   };
 
-  const [state, setState] = useState({
-    activeItem: {
-      ['basic-js']: true,
-    },
-  });
+  const setStateFunction = (name, key) => {
+    setTitle(name);
+    setState(key);
+    dispatch(changeCurrentPage(key));
+  };
 
   const [scrollState, setScrollState] = useState(false);
 
@@ -68,292 +79,60 @@ function MainAboutCSS() {
       <main className="page__main" onWheel={listenScrollEvent}>
         <div className="main-section">
           <h1>the basics of magic<br /> on the web</h1>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['basic-js']: true}})}
-              >Основы JS
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['variables']: true}})}
-                  >Variables
+          {ContentsJS.length > 0 && (
+            <ul>
+              {ContentsJS.map((content) => (
+                <li className="" id="" key={content.state}>
+                  <Link
+                    className=""
+                    onClick={() => setStateFunction(content.name, content.state)}
+                    to="#"
+                  >{content.name}
                   </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['instruction-and-operations']: true}})}
-                  >Instructions And Operations
-                  </Link>
-                </li>
-                <li>Operators
-                  <ul>
-                    <li>
-                      <Link to="#"
-                        onClick={() => setState({activeItem: {['operators-if-and-switch']: true}})}
-                      >Operators if and switch
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#"
-                        onClick={() => setState({activeItem: {['operators-spread-and-rest']: true}})}
-                      >Operators spread and rest
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="#"
-                        onClick={() => setState({activeItem: {['operator-delete']: true}})}
-                      >Operator delete
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['data-types-in-js']: true}})}
-                  >Data types in JS
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['function']: true}})}
-              >Function
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['areas-of-visibility']: true}})}
-                  >Areas Of Visibility
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['events']: true}})}
-              >Events
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['string']: true}})}
-              >String
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['dates']: true}})}
-              >DatesandTimes
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['forms-in-js']: true}})}
-              >Forms in JS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['style-in-js']: true}})}
-              >Style in JS
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['scrolling']: true}})}
-              >Scrolling
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['drag-and-drop']: true}})}
-              >Drag &amp; Drop
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['work-with-video']: true}})}
-              >Work with video HTML5
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['document-object-model']: true}})}
-              >Document Object Model
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['manipulation-with-dom']: true}})}
-                  >Manipulation with DOM
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['methods']: true}})}
-                  >Methods
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['properties']: true}})}
-                  >Properties
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['ecma-script-modules']: true}})}
-              >Ecma-script modules
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['arrow-function']: true}})}
-                  >Arrow function
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['data-structures']: true}})}
-              >Data Structures
-              </Link>
-              <ul>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['objects']: true}})}
-                  >Objects
-                  </Link>
-                </li>
-                <li>
-                  <Link to="#"
-                    onClick={() => setState({activeItem: {['arrays']: true}})}
-                  >Arrays
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['oop']: true}})}
-              >ООП и Javascript
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['spa-and-mvp']: true}})}
-              ><abbr data-title="Single-Page Application">SPA</abbr> and <abbr data-title="Model View Presenter">MVP</abbr>
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['ajax-and-spa']: true}})}
-              >Ajax &amp; SPA
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['architecture-of-front-end-applications']: true}})}
-              >Architecture of front end applications
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['mock']: true}})}
-              >Mock
-              </Link>
-            </li>
-          </ul>
+                </li>))}
+            </ul>
+          )}
 
-          <h2>Demo</h2>
-          <ul>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['demo-to-mvp']: true}})}
-              >Demo to MVP
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['demo-enumerating-object-keys']: true}})}
-              >Demo enumerating object keys
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['demo-whats-new-in-es2015-objects']: true}})}
-              >Demo Whats New In Es2015 Objects
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['demo-data-binding']: true}})}
-              >Demo Data Binding
-              </Link>
-            </li>
-            <li>
-              <Link to="#"
-                onClick={() => setState({activeItem: {['demo-pattern-observer']: true}})}
-              >Demo Pattern Observer
-              </Link>
-            </li>
-          </ul>
-          <Link to="#"
-            onClick={() => setState({activeItem: {['cases']: true}})}
-          >Cases
-          </Link>
         </div>
         <div className="theory">
-          {(state.activeItem['basic-js']) && <BasicJS />}
-          {(state.activeItem['variables']) && <Variables />}
-          {(state.activeItem['instruction-and-operations']) && <InstructionsAndOperations />}
-          {(state.activeItem['ajax-and-spa']) && <AjaxAndSPA />}
-          {(state.activeItem['areas-of-visibility']) && <AreasOfVisibility />}
-          {(state.activeItem['arrays']) && <Arrays />}
-          {(state.activeItem['objects']) && <Objects />}
-          {(state.activeItem['arrow-function']) && <ArrowFunction />}
-          {(state.activeItem['data-types-in-js']) && <DataTypesInJS />}
-          {(state.activeItem['data-structures']) && <DataStructures />}
-          {(state.activeItem['events']) && <Events />}
-          {(state.activeItem['ecma-script-modules']) && <EcmaScriptModules />}
-          {(state.activeItem['document-object-model']) && <DocumentObjectModel />}
-          {(state.activeItem['forms-in-js']) && <FormsInJS />}
-          {(state.activeItem['function']) && <Function />}
-          {(state.activeItem['methods']) && <Methods />}
-          {(state.activeItem['operators-if-and-switch']) && <OperatorsIfAndSwitch />}
-          {(state.activeItem['operators-spread-and-rest']) && <OperatorsSpreadAndRest />}
-          {(state.activeItem['operator-delete']) && <OperatorDelete />}
-          {(state.activeItem['properties']) && <Properties />}
-          {(state.activeItem['manipulation-with-dom']) && <ManipulationWithDOM />}
-          {(state.activeItem['cases']) && <Cases />}
-          {(state.activeItem['spa-and-mvp']) && <SPAAndMVP />}
-          {(state.activeItem['style-in-js']) && <StyleInJS />}
-          {(state.activeItem['scrolling']) && <Scrolling />}
-          {(state.activeItem['drag-and-drop']) && <DragAndDrop />}
-          {(state.activeItem['dates']) && <DatesandTimes />}
-          {(state.activeItem['work-with-video']) && <WorkWithVideo />}
-          {(state.activeItem['oop']) && <AboutProgramming />}
-          {(state.activeItem['architecture-of-front-end-applications']) && <ArchitectureOfFrontEndApplications />}
-          {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
-          {(state.activeItem['demo-enumerating-object-keys']) && <DemoEnumeratingObjectKeys />}
-          {(state.activeItem['demo-whats-new-in-es2015-objects']) && <DemoWhatsNewInEs2015Objects />}
-          {(state.activeItem['demo-data-binding']) && <DemoDataBinding />}
-          {(state.activeItem['demo-pattern-observer']) && <DemoPatternObserver />}
-          {(state.activeItem['demo-to-mvp']) && <DemoToMVP />}
-          {(state.activeItem['mock']) && <Mock />}
-          {(state.activeItem['string']) && <String />}
+          {(state === 'basic-js') && <BasicJS />}
+          {(state === 'variables') && <Variables />}
+          {(state === 'instruction-and-operations') && <InstructionsAndOperations />}
+          {(state === 'ajax-and-spa') && <AjaxAndSPA />}
+          {(state === 'areas-of-visibility') && <AreasOfVisibility />}
+          {(state === 'arrays') && <Arrays />}
+          {(state === 'objects') && <Objects />}
+          {(state === 'arrow-function') && <ArrowFunction />}
+          {(state === 'data-types-in-js') && <DataTypesInJS />}
+          {(state === 'data-structures') && <DataStructures />}
+          {(state === 'events') && <Events />}
+          {(state === 'ecma-script-modules') && <EcmaScriptModules />}
+          {(state === 'document-object-model') && <DocumentObjectModel />}
+          {(state === 'forms-in-js') && <FormsInJS />}
+          {(state === 'function') && <Function />}
+          {(state === 'methods') && <Methods />}
+          {(state === 'operators-if-and-switch') && <OperatorsIfAndSwitch />}
+          {(state === 'operators-spread-and-rest') && <OperatorsSpreadAndRest />}
+          {(state === 'operator-delete') && <OperatorDelete />}
+          {(state === 'properties') && <Properties />}
+          {(state === 'manipulation-with-dom') && <ManipulationWithDOM />}
+          {(state === 'cases') && <Cases />}
+          {(state === 'spa-and-mvp') && <SPAAndMVP />}
+          {(state === 'style-in-js') && <StyleInJS />}
+          {(state === 'scrolling') && <Scrolling />}
+          {(state === 'drag-and-drop') && <DragAndDrop />}
+          {(state === 'dates') && <DatesandTimes />}
+          {(state === 'work-with-video') && <WorkWithVideo />}
+          {(state === 'oop') && <AboutProgramming />}
+          {(state === 'architecture-of-front-end-applications') && <ArchitectureOfFrontEndApplications />}
+          {(state === 'demo-to-mvp') && <DemoToMVP />}
+          {(state === 'demo-enumerating-object-keys') && <DemoEnumeratingObjectKeys />}
+          {(state === 'demo-whats-new-in-es2015-objects') && <DemoWhatsNewInEs2015Objects />}
+          {(state === 'demo-data-binding') && <DemoDataBinding />}
+          {(state === 'demo-pattern-observer') && <DemoPatternObserver />}
+          {(state === 'demo-to-mvp') && <DemoToMVP />}
+          {(state === 'mock') && <Mock />}
+          {(state === 'string') && <String />}
         </div>
         {scrollState && <ToTopButton scrollState={scrollState} setScrollState={setScrollState} />}
       </main>

@@ -13,7 +13,7 @@ import JSX from '../jsx/jsx';
 import CreateReactApp from '../create-react-app/create-react-app';
 import WorkWithForm from '../work-with-form/work-with-form';
 import Optimization from '../optimization/optimization';
-import { ItemsMenuReactScreen } from '../../../const';
+import { ContentsReact } from '../../../const';
 
 function MainAboutCSS() {
   const meta = {
@@ -43,7 +43,7 @@ function MainAboutCSS() {
         <div className="main-section">
           <h1>Упрости этот интерфейс</h1>
           <ul>
-            {ItemsMenuReactScreen.map((item) => (
+            {ContentsReact.map((item) => (
               <li key={item.state}>
                 <Link to="#"
                   onClick={() => setState({activeItem: {[item.state]: true}})}
