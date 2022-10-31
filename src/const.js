@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const AppRoute = {
   ROOT: '/',
   HTML: '/html',
@@ -209,12 +211,156 @@ export const ContentsCss = [
 
 export const ContentsJS = [
   {
-    name: '',
-    state: '',
+    name: 'Основы JS',
+    state: 'basic-js',
+  },
+  {
+    name: 'Variables',
+    state: 'variables',
+  },
+  {
+    name: 'Instructions And Operations',
+    state: 'instruction-and-operations',
+  },
+  {
+    name: 'Operators if and switch',
+    state: 'operators-if-and-switch',
+  },
+  {
+    name: 'Operators spread and rest',
+    state: 'operators-spread-and-rest',
+  },
+  {
+    name: 'Operator delete',
+    state: 'operator-delete',
+  },
+  {
+    name: 'Data types in JS',
+    state: 'data-types-in-js',
+  },
+  {
+    name: 'Function',
+    state: 'function',
+  },
+  {
+    name: 'Areas Of Visibility',
+    state: 'areas-of-visibility',
+  },
+  {
+    name: 'Events',
+    state: 'events',
+  },
+  {
+    name: 'String',
+    state: 'string',
+  },
+  {
+    name: 'Dates and times',
+    state: 'dates',
+  },
+  {
+    name: 'Forms in JS',
+    state: 'forms-in-js',
+  },
+  {
+    name: 'Style in JS',
+    state: 'style-in-js',
+  },
+  {
+    name: 'Scrolling',
+    state: 'scrolling',
+  },
+  {
+    name: 'Drag & Drop',
+    state: 'drag-and-drop',
+  },
+  {
+    name: 'Work with video',
+    state: 'work-with-video',
+  },
+  {
+    name: 'Document Object Model',
+    state: 'document-object-model',
+  },
+  {
+    name: 'Manipulation with DOM',
+    state: 'manipulation-with-dom',
+  },
+  {
+    name: 'Methods',
+    state: 'methods',
+  },
+  {
+    name: 'Properties',
+    state: 'properties',
+  },
+  {
+    name: 'Ecma-script modules',
+    state: 'ecma-script-modules',
+  },
+  {
+    name: 'Arrow function',
+    state: 'arrow-function',
+  },
+  {
+    name: 'Data Structures',
+    state: 'data-structures',
+  },
+  {
+    name: 'Objects',
+    state: 'objects',
+  },
+  {
+    name: 'Arrays',
+    state: 'arrays',
+  },
+  {
+    name: 'ООП и Javascript',
+    state: 'oop',
+  },
+  {
+    name: <div><abbr data-title="Single-Page Application">SPA</abbr> and <abbr data-title="Model View Presenter">MVP</abbr></div>,
+    state: 'spa-and-mvp',
+  },
+  {
+    name: 'Ajax & SPA',
+    state: 'ajax-and-spa',
+  },
+  {
+    name: 'Architecture of front end applications',
+    state: 'architecture-of-front-end-applications',
+  },
+  {
+    name: 'Mock',
+    state: 'mock',
+  },
+  {
+    name: 'Demo to MVP',
+    state: 'demo-to-mvp',
+  },
+  {
+    name: 'Demo enumerating object keys',
+    state: 'demo-enumerating-object-keys',
+  },
+  {
+    name: 'Demo Whats New In Es2015 Objects',
+    state: 'demo-whats-new-in-es2015-objects',
+  },
+  {
+    name: 'Demo Data Binding',
+    state: 'demo-data-binding',
+  },
+  {
+    name: 'Demo Pattern Observer',
+    state: 'demo-pattern-observer',
+  },
+  {
+    name: 'Cases',
+    state: 'cases',
   },
 ];
 
-export const ItemsMenuOtherScreen = [
+export const ContentsOther = [
   {
     title:'Site Checklist',
     state: 'site-checklist',
@@ -281,7 +427,7 @@ export const ItemsMenuOtherScreen = [
   },
 ];
 
-export const ItemsMenuHowToOtherScreen = [
+export const ContentsHowToOther = [
   {
     title:'Кастомные чекбоксы правильно',
     state: 'how-to-make-custom-checkboxes-correctly',
@@ -324,7 +470,7 @@ export const ItemsMenuHowToOtherScreen = [
   },
 ];
 
-export const ItemsMenuReactScreen = [
+export const ContentsReact = [
   {
     title:'Основы React',
     state: 'basic-react',
@@ -372,5 +518,12 @@ export const ItemsMenuReactScreen = [
   {
     title:'Мемоизация',
     state: 'memo',
+  },
+];
+
+export const ContentsPHP = [
+  {
+    title:'Основы PHP',
+    state: 'basic-php',
   },
 ];
