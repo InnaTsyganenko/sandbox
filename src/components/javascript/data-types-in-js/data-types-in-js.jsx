@@ -8,7 +8,6 @@ function DataTypesInJS() {
       <p>Типы данных бывают простые и сложные (или примитивные и объектные). Cложные типы данных передаются по ссылке. Примитивные — по значению.</p>
       <p>Узнать что за тип перед нами можно с помощью операнда typeof:</p>
       <pre>{'console.log(typeof(operand));'}</pre>
-      <p><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="noopener noreferrer">MDN: Оператор typeof</a></p>
       <p>Стандарт ECMAScript определяет 6 примитивных типов данных.</p>
 
       <h3>Передача по значению</h3>
