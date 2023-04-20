@@ -18,7 +18,6 @@ import DocumentObjectModel from '../document-object-model/document-object-model'
 import FormsInJS from '../forms-in-js/forms-in-js';
 import Function from '../function/function';
 import InstructionsAndOperations from '../instruction-and-operations/instruction-and-operations';
-import Methods from '../methods/methods';
 import OperatorsIfAndSwitch from '../operators/operators-if-and-switch';
 import OperatorsSpreadAndRest from '../operators/operators-spread-and-rest';
 import OperatorDelete from '../operators/operator-delete';
