@@ -10,10 +10,12 @@ function EcmaScriptModules() {
         <li>We use the class keyword to define JavaScript classes. There are two things worth remembering about them. Firstly, unlike with objects, you don&apos;t need to put commas between class method definitions. Secondly, unlike many other languages with classes, in JavaScript the value of this in a method depends on how it is called.</li>
         <li>We sometimes use =&gt; to define &quot;arrow functions&quot;. They&apos;re like regular functions, but shorter. For example, x =&gt; x * 2 is roughly equivalent to function(x) &lcub; return x * 2; &rcub;. Importantly, arrow functions don&apos;t have their own this value so they&apos;re handy when you want to preserve the this value from an outer method definition.</li>
       </ul>
+
       <h1>Модуль</h1>
       <p>Модуль — это функционально законченный фрагмент программы, оформленный в виде отдельного файла с исходным кодом.</p>
       <p>Законченный фрагмент кода — это фрагмент, который выполняет вполне конкретную поставленную задачу и ничего лишнего. Мы будем писать модули в разных файлах, где 1 файл = 1 модуль, который выполняет одну конкретную задачу.</p>
       <p>Модули должны быть максимально универсальными.</p>
+
       <h2>Задачи модуля</h2>
       <h3>Пространство имён</h3>
       <p>Модуль изолирует пространство имён, чтобы переменные из одного модуля не попадали в другой модуль, как это бывает с глобальными переменными. Всё, что создаётся в модуле, остаётся в модуле.</p>
@@ -36,6 +38,7 @@ window.mother = {
 };
 })();`}
       </pre>
+
       <h3>Зависимости</h3>
       <p>Модуль должен описывать и давать понимание, какие у него есть зависимости. Например, модуль может зависеть от других модулей.</p>
       <pre>{`/ файл сain.js

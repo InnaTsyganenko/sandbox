@@ -6,7 +6,6 @@ import ToTopButton from '../../to-top-button/to-top-button';
 import BasicJS from '../basic-js/basic-js';
 import Variables from '../variables/variables';
 import AjaxAndSPA from '../ajax-and-spa/ajax-and-spa';
-import AreasOfVisibility from '../areas-of-visibility/areas-of-visibility';
 import Arrays from '../arrays/arrays';
 import Objects from '../objects/objects';
 import ArrowFunction from '../arrow-function/arrow-function';
@@ -18,7 +17,6 @@ import DocumentObjectModel from '../document-object-model/document-object-model'
 import FormsInJS from '../forms-in-js/forms-in-js';
 import Function from '../function/function';
 import InstructionsAndOperations from '../instruction-and-operations/instruction-and-operations';
-import Methods from '../methods/methods';
 import OperatorsIfAndSwitch from '../operators/operators-if-and-switch';
 import OperatorsSpreadAndRest from '../operators/operators-spread-and-rest';
 import OperatorDelete from '../operators/operator-delete';
@@ -99,7 +97,6 @@ function MainAboutCSS() {
           {(state === 'variables') && <Variables />}
           {(state === 'instruction-and-operations') && <InstructionsAndOperations />}
           {(state === 'ajax-and-spa') && <AjaxAndSPA />}
-          {(state === 'areas-of-visibility') && <AreasOfVisibility />}
           {(state === 'arrays') && <Arrays />}
           {(state === 'objects') && <Objects />}
           {(state === 'arrow-function') && <ArrowFunction />}
