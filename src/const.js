@@ -371,7 +371,7 @@ export const ContentsOther = [
   },
   {
     title:'GitHub and git',
-    state: 'git-and-github',
+    state: 'git',
   },
   {
     title:'Gulp',

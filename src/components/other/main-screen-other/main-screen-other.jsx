@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import DocumentMeta from 'react-document-meta';
 import {Link} from 'react-router-dom';
 import Header from '../../header/header';
-import GitAndGitHub from '../git-and-github/git-and-github';
+import GitAndGitHub from '../git/git';
 import Vscode from '../vscode/vscode';
 import Emmet from '../emmet/emmet';
 import ThreeKeySoftwarePrinciples from '../three-key-software-principles/three-key-software-principles';
@@ -88,7 +88,7 @@ function MainAboutOther() {
           </ul>
         </div>
         <div className="theory">
-          {(state.activeItem['git-and-github']) && <GitAndGitHub />}
+          {(state.activeItem['git']) && <GitAndGitHub />}
           {(state.activeItem['vscode']) && <Vscode />}
           {(state.activeItem['emmet']) && <Emmet />}
           {(state.activeItem['three-key-software-principles']) && <ThreeKeySoftwarePrinciples />}
